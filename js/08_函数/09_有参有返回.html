@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 想要函数外 拿到sum的值,需要用返回值
+        function getSum(a,b) {
+            var sum = a + b;
+            // console.log(sum);
+            return sum;
+        }
+        // abc 接收返回值
+        var abc = getSum(10,20);
+        console.log(abc);
+    </script>
+</body>
+</html>

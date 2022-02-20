@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * localstorage 5MB 对象类型存储
+         * H5新增，支持大部分的浏览器 IE8+
+         * 没有时间限制
+        */
+        // 1. 存储数据
+        // window.localStorage.name = '李四';
+        // window.localStorage['age'] = '30'
+        // window.localStorage.setItem('sex','女')
+
+        // 2. 获取数据
+        console.log(window.localStorage);
+        console.log(window.localStorage.age);
+
+        // 3. 更改某一条数据的值
+        window.localStorage.age = '18';
+
+        // 4. 删除
+        window.localStorage.removeItem('age')
+        
+        // 5. 全部删除 
+        window.localStorage.clear();
+
+        //
+
+
+
+    </script>
+</body>
+</html>

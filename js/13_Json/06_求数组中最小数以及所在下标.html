@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var arr = [4, 5, 6, 10, 2, 1, 100];
+
+        // 求数组中最小数以及所在下标
+
+        // 假设数组中最小数是第一个
+        var min = arr[0];
+        var index = 0;
+
+        // 通过for循环判断，如果有比min小的，更改min的值
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+                index = i;
+            }
+        }
+
+        console.log(min,index);
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date = new Date();
+        date.setDate(date.getDate() + 1000);
+        document.cookie = 'name=张三;expires=' + date.toUTCString();
+        document.cookie = 'age=18;expires=' + date.toUTCString();
+        document.cookie = 'sex=女;expires=' + date.toUTCString();
+
+        console.log(document.cookie);
+        var cookieA = getCookie();
+        console.log(cookieA);
+        
+        function getCookie() {
+            var cookieObj = {}
+            var arr = document.cookie.split('; ');
+            console.log(arr);
+            for (let i = 0; i < arr.length; i++) {
+                var tempArr = arr[i].split('=');
+                cookieObj[tempArr[0]] = tempArr[1];        
+            }
+            return cookieObj;
+        }
+    </script>
+</body>
+</html>

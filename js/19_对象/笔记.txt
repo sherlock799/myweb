@@ -1,0 +1,111 @@
+计划：
+JavaScript 高级
+网络请求
+React 学习（三大框架：Vue/React/Angular）
+React 仿网易云音乐播放器
+
+提示：
+知识点比较散，知识点比较多
+
+
+
+面向对象
+
+面向过程：就像在读文章一样，一句一句地往下执行
+var bool = false;
+if(bool){
+    do();
+}else{
+    console.log(‘false’);
+}
+// 封装
+function do(){
+    console.log('true');
+    console.log('true');
+    console.log('true');
+    console.log('true');
+    console.log('true');
+    console.log('true');
+}
+
+面向对象：
+将数据和方法组织为一个整体，以更贴近事物的方式运行。
+
+function foo(){
+    var name = 'Bob'; // 声明属性
+    var age = 1; // 声明属性
+    console.log(name + '(' + age + '岁): ' + 'wang wang wang'); // 执行行为/动作
+}
+
+function sayHi(name, age){
+    console.log(name + '(' + age + '岁): ' + 'wang wang wang');
+}
+function shakeHands(name){
+    console.log(name + 'shake hands');
+}
+
+下命令： 
+amy,来握个手
+bob,来握个手
+amy,来跟大家打个招呼
+bob,来跟大家打个招呼
+
+面向对象开发：将对象（狗狗）具备的属性（名字）和行为组织在一起
+
+属性：它有什么
+行为：它能做什么
+
+构造函数:
+一只狗狗具备名字和年龄属性，可以跟人类打招呼和握手
+
+// 可以创建狗狗的函数
+function Dog(name,age){
+    // 将属性存下来
+    this.name = name;
+    this.age = age;
+    this.sayHi = function(){
+        console.log(this.name + '正在打招呼');
+    };
+    this.shakeHands = function(){
+        console.log(this.name + '正在握手');
+    }
+}
+
+构造函数：描述如何创建一个抽象狗狗的函数
+实例：具体的狗狗
+
+// 使用 new 关键字，去创建一个构造函数的实例
+var amy = new Dog('amy',2); // 具体的狗狗
+
+# new 和 return 的区别：
+作用：
+new: 用来创建一个构造函数的实例，会返回构造函数的实例
+return: 提前结束函数的运行/给函数设置返回值
+
+使用 new 关键字创建出来的构造函数实例，它们之间的属性和方法
+是相互独立的，在构造函数中使用this声明的属性和方法最终会绑定到
+构造函数的实例上.
+
+如何用构造函数去描述和创建一台笔记本电脑？
+function Laptop(brand,model,size){
+    this.brand = brand;
+    this.model = model;
+    this.size = size;
+    this.info = function(){
+        console.log(this.brand + this.model + '的尺寸为：' + this.size);
+    }
+    this.boot = function(){
+        console.log(this.brand + this.model + '已开机');
+    }
+    this.shutdown = function(){
+        console.log(this.brand + this.model + '已关机');
+    }
+}
+var huaweiMatebookPro = new Laptop('华为','Matebook Pro',"13'3");
+huaweiMatebookPro.info();
+huaweiMatebookPro.boot();
+huaweiMatebookPro.info();
+huaweiMatebookPro.shutdown();
+
+
+微信昵称：Rennix09

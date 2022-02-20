@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #all {
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        #top {
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        #top #nav {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        #top #nav #nav_left {
+            float: left;
+            font-size: 25px;
+            color: #FFA500;
+        }
+
+        #top #nav #nav_right {
+            float: right;
+            font-size: 25px;
+            color: #FFA500;
+        }
+
+        #middle {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        #top #middle #textarea {
+            width: 600px;
+            margin: 0 auto;
+            resize: none;
+        }
+
+        #top .top_bottom {
+            overflow: hidden;
+        }
+
+        #top .top_bottom .t_bottom_left {
+            padding-top: 10px;
+            float: left;
+            overflow: hidden;
+        }
+
+        .t_bottom_left div {
+            float: left;
+            margin-right: 20px;
+            font-size: 20px;
+        }
+
+        #t_bottom_right {
+            float: right;
+            background-color: #FFA280;
+            width: 90px;
+            height: 30px;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 5px;
+        }
+
+        #bottom {
+            width: 100%;
+            padding: 20px;
+            height: 1000px;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+        /*给js的样式*/
+
+        #bottom .small {
+            width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid black;
+            height: 100px;
+            border-radius: 10px;
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        .small .name {
+            margin-bottom: 5px;
+        }
+
+        .small .text {
+            width: 100%;
+            height: 60px;
+            word-wrap: break-word;
+        }
+
+        .small .delete {
+            width: 50px;
+            height: 20px;
+            position: absolute;
+            top: 10px;
+            right: 0;
+            cursor: pointer;
+        }
+
+        #message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 25px;
+            margin-left: -100px;
+            margin-top: -25px;
+            background-color: #FFA280;
+            border: 5px solid #FFA280;
+            color: white;
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="all">
+        <div id="top">
+            <div id="nav">
+                <div id="nav_left">LOGO</div>
+                <!--还可以输入137个字-->
+                <div id="nav_right">点击领取红包</div>
+            </div>
+            <div id="middle">
+                <textarea name="" rows="12" cols="100" id="textarea"></textarea>
+            </div>
+            <div class="top_bottom">
+                <div class="t_bottom_left">
+                    <div>表情</div>
+                    <div>图片</div>
+                    <div>视频</div>
+                    <div>话题</div>
+                    <div>文章</div>
+                </div>
+                <div id="t_bottom_right">发 布</div>
+            </div>
+        </div>
+
+        <div id="bottom">
+            <!-- 
+            <div class="small">
+                <div class="name">赵四</div>
+                <div class="text">1111</div>
+                <div class="time">10月26日 21: 07 发布</div>
+                <div class="delete">删除</div>
+            </div> 
+        -->
+        </div>
+        <div id="message">
+            发布成功
+        </div>
+    </div>
+
+    <script>
+
+        var oInput = document.getElementById("textarea");// 文本框内容
+        var oSubmit = document.getElementById("t_bottom_right");// 发布按钮
+        var oBottom = document.getElementById("bottom");
+        var oMessage = document.getElementById("message");
+
+        oSubmit.onclick = function () {
+            if (oInput.value.trim() === '') { // 为空
+                // 消息框提示
+                showMessage('请输入内容!!')
+            } else {
+                // 消息框提示
+                showMessage('发布成功!!')
+                // 页面中添加一条留言
+                createBottomChild()
+            }
+            oInput.value = ''
+        }
+
+        // 页面中添加一条留言
+        function createBottomChild() {
+            var oSmall = document.createElement('div');
+            oSmall.className = 'small';
+            oBottom.appendChild(oSmall)
+
+            // <div class="name">赵四</div>
+
+            var oName = document.createElement('div');
+            oName.className = 'name';
+            oName.innerHTML = '赵四';
+            oSmall.appendChild(oName)
+
+            // <div class="text">1111</div>
+            var oText = document.createElement('div');
+            oText.className = "text";
+            oText.innerHTML = oInput.value.trim();
+            oSmall.appendChild(oText)
+
+            // <div class="time">10月26日 21: 07 发布</div>
+            var oTime= document.createElement('div');
+            oTime.className = "time";
+            oTime.innerHTML = dateFormate();
+            oSmall.appendChild(oTime)   
+            
+            // <div class="delete">删除</div>
+            var oDel= document.createElement('div');
+            oDel.className = "delete";
+            oDel.innerHTML = '删除';
+
+            oSmall.appendChild(oDel);
+            oDel.onclick = function () {
+                this.parentNode.remove();
+            }
+        }
+        function dateFormate() {
+            var nowDate = new Date();
+            var month = nowDate.getMonth() + 1;
+            var date = nowDate.getDate();
+            var hour = nowDate.getHours();
+            var min = nowDate.getMinutes();
+            // 10月26日 21: 07 发布
+            return addZero(month) + '月' + addZero(date) + '日 ' +  addZero(hour) + ':' + addZero(min) + ' 发布'; 
+            
+        }
+        function addZero(num) {
+            return num < 10 ? '0' + num : num;
+        }
+
+        // 消息框提示
+        function showMessage(mes) {
+            oMessage.style.display = 'block';
+            oMessage.innerHTML = mes;
+            setTimeout(function () {
+                oMessage.style.display = 'none';
+            }, 1000)
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

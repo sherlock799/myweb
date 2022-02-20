@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组去重
+
+        var arr = [1, 3, 4, 5, 6, 1, 1, 1, 6, 4, 7, 3];
+
+        var newArr = [3, 4, 5]; // 存放不重复的数
+
+        // 遍历arr中的数 和 newArr中的每个数进行比较
+        // 如果没有相同的，将arr中的这个数，放到newArr中
+
+        // 判断一个数 是否能放到newArr中 
+        // newArr中的每个数进行比较 才能得出结论
+        /*var num = 3;
+        var flag = '没有相同的';
+        for (var i = 0; i < newArr.length; i++) {
+            // 有相同的
+            if (num === newArr[i]) {
+                flag = '有相同的';
+                // 如果存在相同，就不需要继续向后比较(for循环此刻可以结束),因为已经得到结论
+                break;
+            } 
+        }
+        if (flag === '没有相同的') {
+            newArr.push(num)
+        }
+        console.log(newArr);
+        */
+
+        /* for (var i = 0; i < arr.length; i++) {
+            var num = arr[i];
+            var flag = '没有相同的';
+            for (var j = 0; j < newArr.length; j++) {
+                // 有相同的
+                if (num === newArr[j]) {
+                    flag = '有相同的';
+                    // 如果存在相同，就不需要继续向后比较(for循环此刻可以结束),因为已经得到结论
+                    break;
+                }
+            }
+            if (flag === '没有相同的') {
+                newArr.push(num)
+            } 
+        }
+        console.log(newArr); */
+
+        // 方式一
+        /*for (var i = 0; i < arr.length; i++) {
+            var num = arr[i];
+            var flag = true; // 没有相同的
+            for (var j = 0; j < newArr.length; j++) {
+                // 有相同的
+                if (num === newArr[j]) {
+                    flag = false;
+                    // 如果存在相同，就不需要继续向后比较(for循环此刻可以结束),因为已经得到结论
+                    break;
+                }
+            }
+            if (flag) {
+                newArr.push(num)
+            } 
+        }
+        console.log(newArr);*/
+
+        for (var i = 0; i < arr.length; i++) {
+            var num = arr[i];
+            // num 是否和newArr中的某个数相等
+            // 等同于 num 在newArr中是否存在
+            if (newArr.indexOf(num) == -1) { // 不存在
+                newArr.push(num)
+            } 
+        }
+        console.log(newArr);
+
+        // 使用数组方法 filter 实现数组去重
+        // 使用ES6 new set 实现数组去重
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // parseInt 数字取整
+        var num = parseInt(3.14);
+
+        // parseInt 将数字字符串转化成数字类型
+        var a1 = parseInt('3.14');  // 3
+        var a2 = parseInt('120px'); // 120
+        var a3 = parseInt('rem120px'); // NAN
+        console.log(a1, a2, a3);
+
+        var b1 = parseFloat('3.14');
+        var b2 = parseFloat('20');
+        console.log(b1, b2);
+
+        // 隐式类型转化
+
+        console.log('12' - 0); // 数字12
+        console.log('123' - '120'); // 数字3
+        console.log('123' * 1); // 数字123
+
+
+        // NAN not a number
+        // 一般出现的情况是 字符串的变量参与了数字相关的运算
+
+        console.log('aahhaha' - 0); // NAN
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

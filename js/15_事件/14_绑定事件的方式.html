@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="box1"></div>
+    <script>
+        var oBox = document.getElementById('box');
+        var oBox1 = document.getElementById('box1');
+        
+        oBox.onclick = function () {
+            console.log(1);
+        }
+        oBox.onclick = function () {
+            console.log(2);
+        }
+        oBox1.addEventListener('click',function () {
+            console.log('oBox1-1');
+        })
+        oBox1.addEventListener('click',function () {
+            console.log('oBox1-2');
+        })
+    </script>
+
+    
+</body>
+</html>

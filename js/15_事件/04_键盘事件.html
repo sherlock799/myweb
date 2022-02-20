@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 键盘按下时响应,能识别功能按键 比如 ctrl shift 左右箭头等
+        document.onkeydown = function (ev) {
+            ev = ev || window.event;
+            // console.log('onkeydown');
+            // console.log(ev);
+            // 1. key 键盘按下的按键
+            console.log(ev.key);
+            // 2. keycode 键盘按钮对应的 ASCII  A-Z: 65~90 a-z: 97~ 122
+            console.log(ev.keyCode);
+            // 3. shiftkey altkey ctrlkey
+            console.log('ev.altKey',ev.altKey);
+            console.log('ev.shiftKey',ev.shiftKey);
+            console.log('ev.ctrlKey',ev.ctrlKey);
+        }
+        // 键盘按下时响应,不能识别功能按键 比如 ctrl shift 左右箭头等
+        document.onkeypress = function () {
+            // console.log('onkeypress');
+        }
+        // 键盘抬起时响应
+        document.onkeyup = function () {
+            // console.log('onkeyup');
+        }
+
+
+        var arr = [];
+        for (var i = 97; i <= 122; i++) {
+            var str = String.fromCharCode(i);
+            arr.push(str);
+        }
+        console.log(arr);
+
+    </script>
+</body>
+
+</html>

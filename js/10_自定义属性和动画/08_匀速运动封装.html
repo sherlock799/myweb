@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .all {
+            width: 500px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div id="box"></div>
+    </div>
+    <script>
+        var oBox = document.getElementById('box');
+
+        // 400 目标值
+        // oBox 运动的DOM元素
+        // 22 每次运动的距离
+        linearMove(oBox,22,400)
+        function linearMove(el, space, target) {
+            // 每次向右运动22px
+            var timer = setInterval(function () {
+                // 计算剩余位置是否小于22，如果是,停到终点，否则继续运动
+                if (target - el.offsetLeft <= space) {
+                    el.style.left = target + 'px';
+                    clearInterval(timer);
+                } else {
+                    el.style.left = el.offsetLeft + space + 'px';
+                }
+            }, 20);
+        }
+
+
+        // // 每次向右运动22px
+        // var timer = setInterval(function () {
+        //     // 计算剩余位置是否小于22，如果是,停到终点，否则继续运动
+        //     if (400 - oBox.offsetLeft <= 22) {
+        //         oBox.style.left = '400px';
+        //         clearInterval(timer);
+        //     } else {
+        //         oBox.style.left = oBox.offsetLeft + 22 + 'px';
+        //     }
+        // }, 20);
+
+
+
+    </script>
+
+</body>
+
+</html>

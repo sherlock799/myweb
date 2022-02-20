@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a1 = 3 > 10; // false
+        var a2 = 3 < 10; // true
+        var a3 = 3 >= 3; // true
+        var a4 = 3 <= 1; // false
+
+        /********************* 与 &&  *****************************/
+        // 全为真才为真 有一假则为假
+        console.log(a1 && a2); // false
+        console.log(a2 && a3); // true
+        console.log(a1 && a2 && a3); // false
+
+
+        var y = 10;
+        // 注意: 数学中此种写法 3 < y < 20，在代码中 y > 3 && y < 20
+
+        
+        /********************* 或 ||  *****************************/
+        // 一个为真则为真 全假才为假
+        console.log(a1 || a2); // true
+        console.log(a1 || a4); // false
+        console.log(a1 || a2 || a3); // true
+
+        /********************* 非 !  *****************************/
+        var m = 3 > 1; // true
+        console.log(!m); // false
+        
+        // !m 不会影响m的值的
+        console.log(m); // true
+
+        // 给m本身取反
+        m = !m;
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

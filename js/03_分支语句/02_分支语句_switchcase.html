@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * switch...case 能实现的功能，if...else都能实现
+         * 但是if...else 能实现的分支语句功能更丰富
+         * 
+         * switch...case 对变量的值进行判断
+         * 
+        switch ( 要判断的变量 ) {
+            case 变量可能的值:  
+                break; // 结束switch...case
+            
+            default: 都不满足的时进入到default中
+                console.log("不符合输入条件");
+                break;
+        }
+         * */
+        
+        
+
+
+        var day = 10; // 星期几
+
+        switch (day) {
+            case 1:
+                console.log("星期一");
+                break;
+            case 2:
+                console.log("星期二");
+                break;
+            case 3:
+                console.log("星期三");
+                break;
+            case 4:
+                console.log("星期四");
+                break;
+            case 5:
+                console.log("星期五");
+                // break作用: 结束switch...case
+                break;
+            case 6:
+                console.log("星期六");
+                break;
+            case 7:
+                console.log("星期日");
+                break;
+            default: // dafault中可以不写代码
+                console.log("不符合输入条件");
+                break;
+        }
+        console.log("switch...case执行结束");
+
+
+        if (day == 1) {
+            console.log("星期一");
+        } else if (day == 2) {
+            console.log("星期二");
+        } else if (day == 3) {
+            console.log("星期三");
+        } else if (day == 4) {
+            console.log("星期四");
+        } else if (day == 5) {
+            console.log("星期五");
+        }
+    </script>
+</body>
+
+</html>

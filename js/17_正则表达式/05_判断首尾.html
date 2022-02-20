@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // QQ号 6 ~ 12位的纯数字 不能以0开头
+        var str = 'a88888888';
+        // reg的规则是: 只要str中存在符合正则要求的子串即可
+        var reg = /[1-9]\d{5,11}/;
+        var flag = reg.test(str); // true
+        console.log(flag);
+
+        // 如果想从字符串头开始到结束符合条件，需要添加对应的正则
+        var reg1 = /^[1-9]\d{5,11}$/;
+        var flag1 = reg1.test(str); // false
+        var str1 = '3562371236'
+        var flag2 = reg1.test(str2); // false
+
+        console.log(flag2);
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cbAll" />
+                    </th>
+                    <th>商品</th>
+                    <th>价钱</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td>
+                        <input class="select" type="checkbox" />
+                    </td>
+                    <td>iPhone8</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="select" type="checkbox" />
+                    </td>
+                    <td>iPad Pro</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="select" type="checkbox" />
+                    </td>
+                    <td>iPad Air</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="select" type="checkbox" />
+                    </td>
+                    <td>Apple Watch</td>
+                    <td>2000</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var oAll = document.getElementById("j_cbAll"); // 全选
+        var oSelects = document.getElementsByClassName("select"); // 每一条的checkbox
+
+        // 点击全选的checkbox,让四个商品的checkbox和它的状态保持一致
+        oAll.onclick = function () {
+            console.log(this.checked);
+            for (var i = 0; i < oSelects.length; i++) {
+                oSelects[i].checked = this.checked;
+            }
+
+        }
+
+        // oSelects.length 代表有多少个商品
+
+        // 每次点击商品的checkboxs时，如果选中的个数如果和oSelects.length相等，全选的checkbox要设置成选中状态
+        // 如何计算选中的个数
+        
+
+        for (var i = 0; i < oSelects.length; i++) {
+            oSelects[i].onclick = function () {
+                var count = 0; // 选中的个数
+                // 计算选中的个数
+                for (var i = 0; i < oSelects.length; i++) {
+                    if (oSelects[i].checked) {
+                        count++;
+                    }
+                }
+                //选中的个数如果和oSelects.length相等，全选的checkbox要设置成选中状态
+                // if (count === oSelects.length) {
+                //     oAll.checked = true
+                // } else {
+                //     oAll.checked = false;
+                // }
+                oAll.checked = count === oSelects.length ? true :false
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

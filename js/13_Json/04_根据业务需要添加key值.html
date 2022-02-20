@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #all {
+            width: 500px;
+            padding: 20px;
+            border: 5px solid lightgray;
+            margin: 100px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #all .box {
+            width: 100px;
+            text-align: center;
+            line-height: 30px;
+            height: 30px;
+            border: 1px solid lightgreen;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+        .box1 {
+            background-color: lightgreen;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="all">
+        <!-- <div class="box">222</div> -->
+    </div>
+    <script>
+        var oAll = document.getElementById('all');
+
+        var str = '[{"id":1,"name":"美食","icon":"http://ww1.sinaimg.cn/large/006ThXL5ly1fj8w5i2onyj302u02umwz.jpg"},{"id":2,"name":"洗浴足疗","icon":"http://ww1.sinaimg.cn/large/006ThXL5ly1fj8w5i2j4dj302u02umwy.jpg"},{"id":3,"name":"结婚啦","icon":"http://ww1.sinaimg.cn/large/006ThXL5ly1fj8w5i56i0j302u02u744.jpg"},{"id":4,"name":"卡拉OK","icon":"http://ww1.sinaimg.cn/large/006ThXL5ly1fj8w5i2uzvj302u02udfo.jpg"},{"id":5,"name":"找工作","icon":"http://ww1.sinaimg.cn/large/006ThXL5ly1fj8w5i2rnlj302u02umwz.jpg"},{"id":6,"name":"辅导班","icon":"http://ww1.sinaimg.cn/large/006ThXL5ly1fj8w5i2zloj302u02udfn.jpg"},{"id":7,"name":"汽车保养","icon":"http://ww1.sinaimg.cn/large/006ThXL5ly1fj8w5i69eij302u02ua9w.jpg"},{"id":8,"name":"租房","icon":"http://ww1.sinaimg.cn/large/006ThXL5ly1fj8w5i6j2lj302u02u0sj.jpg"},{"id":9,"name":"装修","icon":"http://ww1.sinaimg.cn/large/006ThXL5ly1fj8w5i6z1pj302u02ua9u.jpg"}]';
+        var aJson = JSON.parse(str);
+        for (var i = 0; i < aJson.length; i++) {
+            aJson[i]['isSelect'] = false; // false:未选中
+            createChild(aJson[i])
+        }
+
+        function createChild(item) {
+            var oName = document.createElement('div');
+            oName.className = 'box';
+            oName.innerHTML = item['name'];
+            oAll.appendChild(oName);
+
+            oName.onclick = function () {
+                // 设置要变成的状态
+                item['isSelect'] = !item['isSelect'];
+                if (item['isSelect']) { // 标签变成选中状态
+                    this.style.backgroundColor = 'lightgreen';
+                    this.style.color = 'white';
+                } else {
+                    this.style.backgroundColor = 'white';
+                    this.style.color = 'black';
+                }
+                console.log(aJson);
+
+            }
+        }
+    </script>
+</body>
+
+</html>

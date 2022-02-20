@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        // 实现一个函数，可以随机 66 到 99 之间的数，并打印
+        function getRan() {
+            var num = Math.floor(Math.random()*(99 - 66 + 1) + 66);
+            console.log(num);
+        }
+        getRan();*/
+
+
+        //实现一个函数，可以随机任意区间之间的数，并打印
+        function getRan(min,max) {
+            var num = Math.floor(Math.random()*(max - min + 1) + min);
+            console.log(num);
+        }
+        getRan(1,10);
+        getRan(10,20);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组以下标的形式获取其中的元素
+        var arr = ['奔驰', "smart", '甲壳虫', 'mini', 'BYD F0', 2.0, true];
+
+        /**
+         *  json数据十一键值对的形式存在的
+         *  'name' : '张三' 成为一组键值对
+         *   键(key): name age sex
+         *   值(value): '张三' 18 '男' 可以是任意类型(比如:基础数据类型 数组 json等)
+         * 
+         *   取值: 通过key来获取对应的value值
+         * 
+        */
+
+        var person = {
+            'name':'张三',
+            'age' : 18,
+            'sex' :'男'
+        }
+        console.log(person);
+
+        // 1. 类型 object
+        console.log(typeof person);
+
+        // 2. 取值
+        var a = person['name'];
+        var b = person.name;
+
+        var theKey = 'name';
+        var c = person[theKey]
+        console.log(a,b,c); //'张三'
+
+        // 3. 设置值
+        person['name'] = '李四';
+        person['age'] = 68;
+        // 由于person中没有height这个key值，所以会添加一组键值对
+        person['height'] = '185'
+        console.log(person);
+
+        
+
+    </script>
+</body>
+</html>

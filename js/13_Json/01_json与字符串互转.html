@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数字字符串
+        // json字符串
+
+        var arr = [
+            {
+                'name': '张三',
+                'age': 18,
+                'sex': '男'
+            },
+            {
+                'name': '李四',
+                'age': 20,
+                'sex': '男'
+            },
+            {
+                'name': '王五',
+                'age': 18,
+                'sex': '男'
+            }
+        ]
+
+        var person = {
+            'name': '王五',
+            'age': 18,
+            'sex': '男'
+        }
+        // json 转换成json字符串
+        var jsonStr1 = JSON.stringify(arr);
+        var jsonStr2 = JSON.stringify(person);
+
+        console.log(jsonStr1);
+
+        // json字符串 转 json
+        var jsonObj = JSON.parse(jsonStr1);
+        console.log(jsonObj);
+
+    </script>
+</body>
+
+</html>

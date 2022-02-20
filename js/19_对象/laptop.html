@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function Laptop(brand, model, size) {
+        this.brand = brand;
+        this.model = model;
+        this.brandModel = brand + model;
+        this.size = size;
+        this.isWorking = false;
+        this.getBrandModel = function () {
+            return this.brand + this.model;
+        };
+        this.info = function () {
+            if (this.isWorking) {
+                console.log(this.getBrandModel() + '的尺寸为：' + this.size);
+            } else {
+                console.log('请先开机');
+            }
+        }
+        this.boot = function () {
+            if (this.isWorking) {
+                console.log('已经开机，无需重复开机');
+                return;
+            }
+            this.isWorking = true;
+            console.log(this.getBrandModel() + '已开机');
+        }
+        this.shutdown = function () {
+            if (!this.isWorking) {
+                console.log('已经关机，无需重复关机');
+                return;
+            }
+            this.isWorking = false;
+            console.log(this.getBrandModel() + '已关机');
+        }
+    }
+    var huaweiMatebookPro = new Laptop('华为', 'Matebook Pro', "13.3'");
+    var huaweiMatebookPro2 = new Laptop('华为', 'Matebook Pro', "13.3'");
+    var thinkPad = new Laptop('联想', 'ThinkPad', "15.6'");
+</script>

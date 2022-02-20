@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 800px;
+            border: 1px solid #cccccc;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        tr {
+            line-height: 40px;
+        }
+
+        th {
+            text-align: left;
+            color: #333;
+        }
+
+        th:nth-of-type(1) {
+            width: 20%;
+        }
+
+        th:nth-of-type(2) {
+            width: 50%;
+        }
+
+        th:nth-of-type(3) {
+            width: 30%;
+        }
+
+        .one {
+            background-color: #f3f3f3;
+        }
+
+        tr:hover {
+            background-color: #f3f3f3;
+        }
+
+        span {
+            color: #337AB7;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        #alert {
+            width: 400px;
+            height: 150px;
+            border: 1px solid #ccc;
+            background-color: white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 30px;
+            text-align: center;
+            display: none;
+        }
+
+        .theInput {
+            padding-top: 20px;
+        }
+
+        #alert input {
+            width: 250px;
+            height: 20px;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            overflow: hidden;
+            padding-top: 30px;
+            padding-right: 20px;
+        }
+
+        .btn div {
+            float: right;
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: lightblue;
+            color: white;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="alert">
+        <div class="theInput">
+            <input type="text" id="theName">
+        </div>
+        <div class="btn">
+
+            <div id="cancel">取消</div>
+            <div id="ok">确定</div>
+        </div>
+    </div>
+
+    <table border="1">
+        <tbody id="tb">
+            <tr class="one">
+                <th>品类ID</th>
+                <th>品类名称</th>
+                <th>操作</th>
+            </tr>
+            <!-- <tr>
+                <td>10001</td>
+                <td class='name'>冰箱</td>
+                <td>
+                    <span>修改名称</span>
+                    <span>查看其子类</span>
+                </td>
+            </tr> -->
+        </tbody>
+
+    </table>
+
+    <script src="js/category.js"></script>
+    <script>
+        console.log(list);
+        var oTable = document.getElementById("tb"); // 表格内容
+        var oAlert = document.getElementById("alert"); // 提示框
+        var oName = document.getElementById("theName"); //提示框中的文本框
+        var oOk = document.getElementById("ok"); //提示框中的确定按钮
+        var oCancel = document.getElementById("cancel"); // 提示框中的取消按钮
+        
+        var index = 0; // 记录点击对应的下标
+
+
+        for (var i = 0; i < list.length; i++) {
+            createTableTr(i,list[i]);
+        }
+
+        function createTableTr(theIndex,item) {
+            var oTr = document.createElement('tr');
+            oTable.appendChild(oTr);
+            
+            var theID = document.createElement('td');
+            theID.innerHTML  = item['id']
+            oTr.appendChild(theID);
+
+            var theName = document.createElement('td');
+            // 方便创建后，统一获取品类名称	所有的td
+            theName.className = 'name';
+            theName.innerHTML  = item['name']
+            oTr.appendChild(theName);
+
+            var lastTd = document.createElement('td');
+            oTr.appendChild(lastTd);
+
+            var changeTitle = document.createElement('span');
+            changeTitle.index = theIndex; // 自定义属性记录changeTitle对应数组的下标
+            changeTitle.innerHTML = "修改名称";
+            lastTd.appendChild(changeTitle);
+
+            changeTitle.onclick = function () {
+                oAlert.style.display = 'block';
+                oName.value = list[this.index]['name']
+                index = this.index;
+            }
+            var changeChild = document.createElement('span');
+            changeChild.innerHTML = "查看其子类";
+            lastTd.appendChild(changeChild);
+        }
+
+        var oNameTd = document.getElementsByClassName('name');
+
+        oOk.onclick = function () {
+
+            // 点击修改名称那行tr对应的 品牌名称
+            // 如何 修改名称那行tr对应的品牌名称的td
+            oNameTd[index].innerHTML = oName.value;
+            list[index]["name"] = oName.value
+            oAlert.style.display = 'none';
+
+            
+        }
+        oCancel.onclick = function () {
+            oAlert.style.display = 'none';
+        }
+
+
+    </script>
+</body>
+
+</html>

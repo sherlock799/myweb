@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 获取当前时间
+        var date = new Date();
+        console.log(date);
+
+        // 2. 格式化时间
+        console.log(date.toLocaleDateString()); // 2022/2/11
+        console.log(date.toLocaleTimeString()); // 下午10:00:49
+        console.log(date.toLocaleString()); // 2022/2/11 下午10:01:08
+        console.log(date.toDateString()); // Fri Feb 11 2022
+
+        // 3. 年月日 时分秒获取
+
+        var year  = date.getFullYear();   // 年
+        var month = date.getMonth() + 1;  // 月 区间 0 ~ 11
+        var theDate = date.getDate();     // 日 
+        var hour = date.getHours();       // 时 
+        var min = date.getMinutes();      // 分
+        var sec = date.getSeconds();      // 秒
+        var day = date.getDay();          // 星期 0 ~ 6 周日是0
+        console.log(day);
+
+
+        // 4. 时间戳 1970年到对应时间对象的毫秒数
+
+        /**
+         * 使用场景: 
+         *  1. 前后台交互,后台需要传递当前时间的时间戳
+         *  2. 计算某一段代码执行的时间，获取某个时间区间的时分秒(比如倒计时)
+         * */ 
+
+        var times = date.getTime();
+        console.log(times);
+
+        // 时间戳转化成对应的时间对象
+        var date1 = new Date(1644588871853);
+        console.log(date1);
+
+        // 5. 固定时间转化成时间对象
+        var date2 = new Date('2020/03/02');
+        var date3 = new Date('2021-03-02');
+        var date4 = new Date('2021-03-02 12:05:09');
+
+        console.log(date4.getMinutes());
+
+         // moment.js
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="all">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>
+            5
+            <div>5.1</div>
+        </div>
+    </div>
+    <script>
+        var oAll = document.getElementById('all');
+
+        // 1. 获取子节点 只能获取儿子辈的节点
+        console.log(oAll.children);
+
+        // 2. 创建元素
+        // document.createElement(想创建标签的标签名) 
+        var newDiv = document.createElement('div')
+        newDiv.innerHTML = 'BYD唐';
+
+        // 3. 在页面上添加元素
+        // 将创建的newDiv添加到oAll 中
+        oAll.appendChild(newDiv);
+
+        // 练习 在oAll中添加一个img标签
+        var oImg = document.createElement('img');
+        oImg.src = 'https://cn.vuejs.org/images/logo.svg';
+        oImg.style.width = '100px';
+        oAll.appendChild(oImg);
+
+        // 4. 在指定位置添加元素
+        var theP = document.createElement('p');
+        theP.innerHTML = "冬奥会的冰墩墩，你买到了么？";
+        // insertBefore(新元素A,子元素B): 在B之前插入A
+        // oAll.insertBefore(theP,newDiv);
+
+        // 将theP 放在oAll的最上面
+        // oAll的第一个标签: oAll.children[0]
+        oAll.insertBefore(theP,oAll.children[0]);
+
+        // 5. 删除
+        oImg.remove();
+
+        // 6. 获取父节点
+        var theParent = theP.parentNode;
+        console.log(theParent);
+
+
+
+
+
+
+    </script>
+</body>
+</html>

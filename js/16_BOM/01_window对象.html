@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">111</button>
+    <script>
+        var oBtn = document.getElementById("btn");
+        oBtn.onclick = function () {
+            window.open('./02_window的使用.html')
+        }
+        // 所有的浏览器都支持window对象
+        // 所有的全局变量 和 全局函数，都是window属性和方法
+        var a = 10;
+        console.log(a);
+        console.log(window.a);
+
+        function abc() {
+            console.log('124');
+        }
+        abc();
+        window.abc();
+
+        var arr = [];
+        console.log(arr);
+
+    </script>
+</body>
+
+</html>

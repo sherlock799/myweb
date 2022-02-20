@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 深拷贝 和 浅拷贝 只是针对对象类型
+        var obj = {
+            name: '马六',
+            age: 18,
+            a: {
+                sex: '女'
+            }
+        }
+        
+        // 对象的互相引用
+        var m = obj; // 将obj的地址赋值给了m
+        m.name = '张三'
+        console.log(m.name); // 张三
+        console.log(obj.name); // 张三并不是我们认为的马六
+
+        // 基础数据类型 底层存储的值
+        // 复杂类型  底层存储的是地址 地址存储的是值
+
+
+    </script>
+</body>
+
+</html>

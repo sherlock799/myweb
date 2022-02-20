@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var aJson = {
+            "a": 1111,
+            'b': 2222,
+            'c': {
+                'd': 333,
+                'e': 444
+            }
+        }
+        // 取e的值
+        var m = aJson['c']['e'];
+
+
+        var arr = [
+            {
+                'name': '张三',
+                'age': 18,
+                'sex': '男'
+            },
+            {
+                'name': '李四',
+                'age': 20,
+                'sex': '男'
+            },
+            {
+                'name': '王五',
+                'age': 18,
+                'sex': '男'
+            }
+        ]
+
+        // 把张三 李四 王五 都打印出来
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]['name']);
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

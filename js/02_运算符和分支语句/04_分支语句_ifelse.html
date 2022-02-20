@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        // if是对括号中的的表达式的值进行判断，判断true 还是false,
+        if (false) {
+            // 如何是true,执行if中的代码
+            console.log('if');
+        } else {
+            // 如何是false,执行else中的代码
+            console.log('else');
+        }*/
+
+        var x = 10;
+        if ( x > 20 ) {
+            console.log('成立');
+        } else {
+            console.log('不成立');
+        }
+
+
+        var score = 85;
+        console.log("分支语句开始");
+        if (score >= 90) {
+            console.log("优");
+        } else if ( score >= 80 && score < 90) {
+            console.log("良");
+        } else if ( score >= 70 && score < 80) {
+            console.log('中');
+        } else {
+            console.log('差');
+        }
+        console.log("分支语句结束");
+
+        var y = 20;
+        if ( y < 30 ) {
+            y = y + 100;
+            console.log(y);
+        }
+        console.log("111111");
+
+
+        /**
+         *  if 与 else if 与 else的组合情况
+         *  1. if...
+         *  2. if...else 
+         *  3. if...else if...else if... (else if可以n个)
+         *  4. if...else if...else (else if可以n个)
+        */
+        
+        
+
+
+    </script>
+</body>
+
+</html>

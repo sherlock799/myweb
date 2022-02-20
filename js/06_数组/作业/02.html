@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //数组去重
+
+        var arr = [1, 2, 3, 1, 1, 4, 4, 3, 2, 1];
+
+        var newArr = []; // 存放不重复的数的  
+        for (var i = 0; i < arr.length; i++) {
+            // arr[i] 和 newArr 中每一个数 进行比较 得出结论是否放到newArr中
+            var flag = "没有相同的";
+            for (var j = 0; j < newArr.length; j++) {
+                if (arr[i] == newArr[j]) {
+                    flag = "有相同的";
+                    break;// 如果存在相同，后面的都不需要比较
+                }
+            }
+            if (flag == "没有相同的") {
+                newArr.push(arr[i]);
+            }
+        }
+        console.log(newArr);
+        
+
+
+
+
+        
+
+        
+
+
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

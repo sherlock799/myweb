@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         *  4. 打印 1 到 100 之间个位是7的数 以及其个数
+         *  5. 打印 1 到 100 之间包含是7的数 以及其个数
+         *  6. 思考题：求从1开始 第35个能把7整除的数，是什么数
+         * 
+         * 
+        */
+        // 1. 打印 1 到 100 之间个位是7的数 以及其个数
+        /*var count = 0;
+        for (var i = 1; i <= 100; i++) {
+            if ( i % 10 === 7 ) {
+                console.log(i);
+                count++
+            }
+        }
+        console.log(count);*/
+
+        // 2. 打印 1 到 100 之间包含是7的数 以及其个数
+        /*var count = 0;
+        for (var i = 1; i <= 100; i++) {
+            var flag1 = i % 10 === 7; // 个位是否是7
+            var flag2 = parseInt(i / 10) === 7; // 十位是否是7
+            if (flag1 || flag2) {
+                console.log(i);
+                count++;
+            }
+        }
+        console.log(count); */
+        
+        // 3. 求从1开始 第35个能把7整除的数，是什么数
+        
+        // 不知道循环次数，我们会使用while循环
+        // while循环更多的是对条件的判断
+        var count = 0;
+        var a = 1;
+        while ( count !== 35 ) {
+            if ( a % 7 === 0 ) {
+                count++; 
+                if ( count === 35 ) {
+                    console.log(a);
+                }
+            }
+            a++;
+        }
+        console.log(a - 1);
+
+
+        var count = 0;
+        var a = 0;
+        while ( count !== 35 ) {
+            a++;
+            if ( a % 7 === 0 ) {
+                count++; 
+            }
+        }
+        console.log(a);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

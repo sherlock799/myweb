@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">开始</button>
+    <button id="stop">暂停</button>
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oStop = document.getElementById('stop');
+        var timer = null;
+        oBtn.onclick = function () {
+            // 延时执行function中的代码，只执行一次
+            timer = setTimeout (function () {
+                console.log(Math.random());
+            },3000)
+        }
+        oStop.onclick = function () {
+            // 清除定时器
+            clearTimeout(timer);
+        }
+        
+        
+    </script>
+</body>
+
+</html>

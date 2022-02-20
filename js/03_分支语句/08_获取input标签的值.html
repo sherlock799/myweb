@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id='theInput' >
+    <button id="btn">按钮</button>
+    <script>
+        var oInput = document.getElementById('theInput');
+        var oBtn = document.getElementById('btn');
+        
+        oBtn.onclick = function () {
+            var v = oInput.value;
+            console.log(v);
+            console.log(typeof v); // string 
+
+            // 数字字符串 转 数字类型
+            var b = parseInt(v); // 可以数字取整，或者数字字符串取整
+            console.log("parseInt",b);
+            console.log(typeof b);
+
+            // 保留小数
+            var c = parseFloat(v);
+            console.log("parseFloat",c);
+
+
+        }
+
+        
+    </script>
+</body>
+</html>

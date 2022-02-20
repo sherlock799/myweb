@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            /* border: 5px solid lightgreen; */
+        }
+        .link {
+            color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box" ></div>
+    <img id='logo' src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="">
+    <a href="" id="theA">Go</a>
+    
+    <script>
+        var oBox = document.getElementById("box");
+        var oLogo = document.getElementById("logo");
+        var oTheA = document.getElementById("theA");
+
+        /**
+         *  什么是标签的属性
+         *  比如 id class style src alt 
+         * 
+        */
+        oBox.onclick = function () {
+            /**
+             * 通过属性设置标签的样式
+             * 1. oBox.style.样式名称
+             *    css样式中所有的"-"写法,在js中都变成了驼峰结构
+             *    比如background-color
+             * 2. 设置样式的值，和正常在css中写的方式完全相同，以字符串形式赋值即可
+             * 3. 生成的是行间样式
+             * */ 
+            oBox.style.width = "200px";
+            oBox.style.backgroundColor = "red";
+            oBox.style.border = "5px solid lightgreen";
+            oLogo.style.border = "5px solid lightgreen";
+
+            // 设置类名
+            oTheA.className = 'link'
+            // 所有标签通用写法
+            // 设置属性 : 标签.属性名 = 
+            // oLogo.src = 'https://cn.vuejs.org/images/logo.svg'
+            oTheA.href = 'http://www.baidu.com';
+        }
+
+    </script>
+</body>
+</html>

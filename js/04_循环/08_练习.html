@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 实现 20 到 30 的和
+        // var sum = 0;
+        // for (var i = 20; i <= 30; i++) {
+        //     sum = sum + i;
+        // }
+        // console.log(sum);
+
+        // 打印 1 到 100之间 能整除7的数 以及其个数
+
+        // 1. 1 到 100
+        // 2. 判断能整除7的数
+        // 3. 求个数  每满足能整除7的条件,个数加一
+
+        var count = 0; // 记录个数
+        // // 1. 1 到 100
+        for (var i = 1; i <= 100; i++) {
+            // 2. 判断能整除7的数
+            if (i % 7 === 0) {
+                console.log(i);
+                // 每满足能整除7的条件,个数加一
+                count++
+            }
+        }
+
+        console.log('count:', count);
+
+
+    </script>
+</body>
+
+</html>

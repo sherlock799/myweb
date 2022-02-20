@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <div id="wrap">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+
+    <script>
+        var oBox = document.getElementById("box");
+        var oWrap = document.getElementById("wrap");
+        // innerHTML: 设置或者获取标签的内容
+        oBox.onclick = function () {
+            // 设置标签的内容
+            // oBox.innerHTML = '哈哈哈哈';
+            // 可以存放标签，非必要情况下，不建议使用
+            oBox.innerHTML = '<a href="">啦啦啦</a>';
+
+            // 获取标签的内容
+            console.log(oWrap.innerHTML);
+            // 清空标签的内容
+            oWrap.innerHTML = "";
+        }
+
+    </script>
+</body>
+
+</html>

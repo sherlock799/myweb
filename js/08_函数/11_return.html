@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 需要注意！！！ return后不可写代码
+        /*console.log('嘿嘿')
+        var c = getSum(10,20);
+        console.log(c);
+
+        function getSum(a,b) {
+            var sum = a + b;
+            // 函数执行到return 代表函数调用结束，return后面的代码都不执行了
+            return sum;
+            console.log("哈哈");
+        }*/
+
+        // 2. 函数结合逻辑判断，可以写多个return
+
+        /*function abc(a) {
+            if (a == 2) {
+                return a + 1;
+            } else {
+                return a + 2;
+            }
+        }
+        var m = abc(4);
+        console.log(m); */
+
+        // 2. 函数结合逻辑判断，单独使用return当做结束函数调用的作用
+
+        function xyz(a) {
+            if (a % 2 === 0) {
+                console.log('1111');
+                return;
+            }
+            console.log(2222);
+        }
+        xyz(5)
+
+
+    </script>
+</body>
+
+</html>

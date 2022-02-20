@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            margin-top: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <img src="https://www.baidu.com/img/PC_880906d2a4ad95f5fafb2e540c5cdad7.png" alt="">
+    <script>
+        var oBtn = document.getElementById('btn');
+
+        oBtn.onclick = function () {
+            // 1. 打开一个空白的新标签页 
+            // window.open();
+
+            // 2. 打开新标签页，并指定网址
+            // window.open('http://www.baidu.com');
+
+            // 3. 当前页面跳转到指定网址
+            // window.open('http://www.baidu.com','_self');
+
+            // 关闭当前页面，不同浏览器，效果不同
+            window.close();
+        }
+
+        // 页面资源加载完毕
+        window.onload = function () {
+            
+        }
+        // 页面窗口发生变化时响应
+        window.onresize = function () {
+            
+        }
+        // 页面滚动时响应
+        window.onscroll = function () {
+            console.log('onscroll');
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- 
+    单页面项目 SPA
+    多页面项目 
+ -->

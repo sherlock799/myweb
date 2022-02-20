@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- value设置的值,是select标签可能的值，选中哪儿个，value值就是设置的值 -->
+    <select id="city">
+        <option value="BJ">北京</option>
+        <option value="SH">上海</option>
+        <option value="SZ">深圳</option>
+    </select>
+    <button id="btn">点点点</button>
+
+    <script>
+        var oCity = document.getElementById('city');
+        var oBtn = document.getElementById("btn");
+
+        // 设置选中哪儿个下拉列表
+        oCity.value = 'SZ';
+
+        oBtn.onclick = function () {
+            // 获取选中哪儿个下拉列表
+            console.log(oCity.value);
+        }
+
+    </script>
+</body>
+
+</html>

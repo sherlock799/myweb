@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">开始</button>
+    <button id="stop">暂停</button>
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oStop = document.getElementById('stop');
+        var timer = null;
+        var state = false; // false: 定时器未开启 true反之
+        oBtn.onclick = function () {
+            // 点击开始,只执行一次定时器，再次点击，不执行定时器代码
+            if (state === false) {
+                timer = setInterval(function () {
+                    console.log(Math.random());
+                }, 1000)
+            }
+            state = true;
+        }
+        oStop.onclick = function () {
+            // 清除定时器
+            clearInterval(timer);
+            state = false;
+        }
+
+
+    </script>
+</body>
+
+</html>

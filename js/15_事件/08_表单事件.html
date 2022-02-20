@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="name">
+        <input type="submit" value="提交">
+    </form>
+    <script>
+        var oName = document.getElementById('name');
+
+        // 设置oName时获取焦点状态
+        // oName.focus();
+
+        // 获取到焦点响应
+        oName.onfocus = function () {
+            console.log('onfocus');
+        }
+        // 失去焦点时响应
+        oName.onblur = function () {
+            console.log('onblur');
+        }
+        // 失去焦点时，并且value发生变化时响应
+        oName.onchange = function () {
+            console.log('onchange',this.value);
+        }
+        // 输入时响应 H5新增，需要注意兼容性
+        oName.oninput = function () {
+            console.log('onInput',this.value);
+        }
+
+
+
+    </script>
+</body>
+</html>

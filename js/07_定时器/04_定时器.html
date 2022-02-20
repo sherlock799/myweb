@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">开始</button>
+    <button id="box">for循环</button>
+
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oBox = document.getElementById('box');
+
+        
+        /*oBtn.onclick = function () {
+            // 1000毫秒 每隔1s执行一次function中的代码
+            setInterval(function () {
+                console.log(Math.random());
+            }, 1000);
+        }*/ 
+
+        // for 和 定时器 的 区别
+
+        oBox.onclick = function () {
+            console.log('循环前');
+            for (var i = 0; i < 5; i++) {
+                console.log(i);
+            }
+            console.log('循环后');
+
+        }
+
+        oBtn.onclick = function () {
+            console.log('定时器前');
+            // 执行到定时器，开始计时,同时继续执行代码,计时到3s后，执行定时器中的代码
+            setInterval(function () {
+                console.log(Math.random());
+            }, 3000);
+            console.log('定时器后');
+
+        }
+    </script>
+</body>
+
+</html>

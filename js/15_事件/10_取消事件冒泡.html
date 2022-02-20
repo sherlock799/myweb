@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 600px;
+            height: 300px;
+            border: 10px solid black;
+        }
+        #div2 {
+            width: 400px;
+            height: 200px;
+            border: 5px solid lightslategray;
+
+        }
+        #div3 {
+            width: 100px;
+            height: 100px;
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div id="div3"></div>
+        </div>
+    </div>
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+        var oDiv3 = document.getElementById('div3');
+        // 事件冒泡
+        /**
+         * 当我们点击oDiv3时,所有父标签的点击事件都会响应
+         * 这种一层议程向上响应的效果，叫做事件冒泡
+         * 
+         * 父标签的事件冒泡,在绑定响应函数时，可以看到具体效果
+         * 不绑定响应函数是，事件冒泡依旧存在，只是没有响应函数而已
+        */
+        document.onclick = function () {
+            console.log('document');
+        }
+        oDiv1.onclick = function () {
+            console.log('oDiv1');
+        }
+        // oDiv2.onclick = function () {
+        //     console.log('oDiv2');
+        // }
+        oDiv3.onclick = function (ev) {
+            ev = ev || window.event;
+            ev.stopPropagation();
+            ev.cancelBubble = true; // 兼容IE
+            console.log('oDiv3');
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #all {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="all"></div>
+    <script>
+        var oAll = document.getElementById('all');
+
+        // 点击事件 
+        // 大多数情况,添加了点击事件的标签，一般都设置鼠标样式为小手
+        /* oAll.onclick = function () {
+            console.log('onclick');
+        } */
+
+        // 鼠标移入移出
+        /*oAll.onmouseover = function () {
+            console.log('onmouseover');
+        }
+        oAll.onmouseout = function () {
+            console.log('onmouseout');
+        }*/
+
+        // 双击事件
+        // oAll.ondblclick = function () {
+        //     console.log('ondbclick');
+        // }
+
+        // 鼠标按下时响应
+        /*oAll.onmousedown = function () {
+            console.log('onmousedown');
+        }
+        // 鼠标抬起时响应
+        oAll.onmouseup = function () {
+            console.log('onmouseup');
+        }*/
+
+        // 鼠标在元素内移动时响应
+        // oAll.onmousemove = function () {
+        //     console.log('onmousemove');
+
+        // }
+
+        // 滚轮事件
+        oAll.onmousewheel = function () {
+            console.log('onmousewheel');
+        }
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+</html>

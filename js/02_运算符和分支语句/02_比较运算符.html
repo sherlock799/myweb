@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /**
+         * > < >=  <=
+         * 是否相等 == === 
+         * 是否不等 != !==
+        */
+
+        // > < >=  <=
+        var a1 = 3 > 10; // fasle
+        var a2 = 3 < 10; // true
+        var a3 = 3 >= 3; // true
+        var a4 = 3 <= 1; // fasle
+
+        console.log(a1, a2, a3, a4);
+
+        // 是否相等 ==
+        var a = 10;
+        var b = 20;
+
+        var c = a == b; // c的值是false
+        console.log(c);
+
+        // 两个等于号(==) 仅仅判断值是否相等
+        var y = "10" == 10; 
+        console.log(y); // true
+        // 三个等于号(===) 同时判断值和类型是否相等
+        // === 在项目中更常用
+        var x = "10" === 10;
+        var z = "10" === "10";
+        console.log(x,z); // false
+
+        // 是否不等
+        var m = 10 != 20; // true
+        console.log(m);
+        var n = "10" != 10; // false
+        var s = "10" !== 10; // true
+        console.log(n,s); 
+
+    </script>
+</body>
+
+</html>

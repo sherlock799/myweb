@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #angel {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="img/angel.gif" id="angel" alt="">
+    <script>
+        var oAngel = document.getElementById('angel');
+        document.onmousemove = function (ev) {
+            ev = ev || window.event;
+            oAngel.style.left = ev.pageX - oAngel.offsetWidth / 2 + "px";
+            oAngel.style.top = ev.pageY - oAngel.offsetHeight / 2 + "px";
+        }
+
+    </script>
+</body>
+
+</html>

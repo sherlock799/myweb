@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mask {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: none;
+        
+        }
+    </style>
+</head>
+<body>
+    <button id="show">蒙版显示</button>
+    <button id="hidden">蒙版隐藏</button>
+    <div id="mask">蒙版</div>
+    <script>
+        var oMask = document.getElementById('mask');
+        var oHidden = document.getElementById('hidden');
+        var oShow = document.getElementById('show');
+        oHidden.onclick = function () {
+            oMask.style.display = 'none';
+        }
+        oShow.onclick = function () {
+            oMask.style.display = 'block';
+        }
+
+    </script>
+</body>
+</html>

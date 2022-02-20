@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-bottom: 20px;
+        }
+
+        #wrap {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <div id="wrap"></div>
+    <script>
+        var oBox = document.getElementById("box");
+        var oWrap = document.getElementById('wrap');
+
+        function getSum(a, b) {
+            var sum = 0;
+            for (var i = a; i <= b; i++) {
+                sum += i;
+            }
+            // console.log(sum);
+            return sum;
+        }
+        // 点击 box  计算 3 到 8 的和，并加一打印
+        oBox.onclick = function () {
+            var a = getSum(3, 8);
+            console.log(a + 1);
+
+        }
+        // 点击 wrap 计算 2 到 6 的和，并加二打印
+        oWrap.onclick = function () {
+            var b = getSum(2, 6);
+            console.log(b + 2);
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

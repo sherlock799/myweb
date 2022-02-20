@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        console.log(decodeURI(location.search));
+
+        // ?name=李四&age=18
+        var searchStr = decodeURI(location.search)
+        searchStr= searchStr.split('?')[1]; // name=李四&age=18
+        
+        var arr = searchStr.split('&');
+        console.log(arr);
+
+        var aJson = {};
+        for (var i = 0; i < arr.length; i++) {
+            var tempArr = arr[i].split('=');
+            aJson[tempArr[0]] = tempArr[1];      
+        }
+        console.log(aJson);
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * cookie 只能存储4kb,字符串类型
+         * 前端向后台发送请求时,浏览器中的cookie会同时发送给后台
+         * 后台返回数据时，可以给前端设置cookie
+        */
+
+        // 1. 设置cookie
+        // document.cookie = 'name=张三'
+        // 2. 添加一条cookie
+        // document.cookie = 'age=18'
+        // 3. 更改cookie 
+        // document.cookie = 'age=38'
+
+        // 4. 获取cookie
+        console.log(document.cookie); // name=张三; age=18
+
+        // 5. 想要在浏览器关闭后,保存cookie,需要设置过期时间
+        // 过期时间的设置需要在设置cookie时同时设置
+        // var date = new Date();
+        // date.setDate(date.getDate() + 1000);
+        // // monent.js
+        // document.cookie = 'name=张三;expires=' + date.toUTCString();
+
+        // 6. 删除一条cookie 设置过期时间早于当前时间
+        var date1 = new Date();
+        date1.setDate(date1.getDate() - 1 ); 
+        document.cookie = 'name=张三;expires=' + date1.toUTCString();
+
+
+
+
+    </script>
+</body>
+</html>

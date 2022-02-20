@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 递归： 一直在调用自己，直到满足某个条件使用return结束当前函数的调用
+
+        var num = 0;
+        function abc() {
+            if (num === 6) {
+                return
+            }
+            num++;
+            abc();
+        }
+
+        // 递归求和
+        function fn(n) {
+            if (n == 1) {
+                return 1;
+            }
+            return n + fn(n - 1)
+        }
+        console.log(fn(4));
+        // fn(4) return 4 + fn(4 - 1)
+        // fn(4 - 1)  return 3 + fn(3 - 1)
+        // fn(3 - 1)  return 2 + fn(2 - 1)
+        // fn(2 - 1)  return 1
+
+        // return 4 + 3 + 2 + 1
+
+
+
+    </script>
+</body>
+</html>

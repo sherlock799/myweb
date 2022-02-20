@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#btn">锚点</a>
+    <button id="btn">按钮</button>
+    <form action="">
+        <input type="text" name="age">
+        <input type="text" name='name'> 
+        <input type="submit" value="提交">
+    </form>
+    <script>
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function () {
+            // 1. 获取当前的网址
+            var url = location.href;
+            console.log(url);
+
+            // 网址encode解码
+            url = decodeURI(url);
+            console.log(url);
+            // encode编码
+            url = encodeURI(url);
+            console.log(url);
+
+            // 2. search 搜索字符串
+            var search = location.search; // ?age=18&name=%E5%BC%A0%E4%B8%89
+            console.log(search);
+            
+            // 3. 哈希值  vue-router实现原理，使用location.hash
+            var hash = location.hash; // #btn
+            console.log(hash);
+
+            // 设置href 达到跳转页面的效果
+            // location.href = 'http://www.baidu.com'
+            // location.href = './03_判断浏览器.html'
+
+            // 刷新页面
+            //location.reload();
+        }
+        // cookie localstorage sessionstorage
+        
+    </script>
+</body>
+</html>

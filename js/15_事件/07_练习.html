@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="theInput">
+    <ul id="list">
+        <li>111</li>
+    </ul>
+    <script>
+        var oInput = document.getElementById('theInput');
+        var oList = document.getElementById('list');
+        oInput.onkeydown = function (ev) {
+            ev = ev || window.event;
+            if (ev.keyCode === 13) {
+                var theLi = document.createElement('li');
+                theLi.innerHTML = oInput.value;
+                oList.appendChild(theLi);
+                oInput.value = '';
+                
+            }
+        }
+    </script>
+</body>
+</html>

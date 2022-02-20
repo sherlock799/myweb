@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 999;
+        var b = 333;
+
+        /* 方式一
+        // 交换两个变量的值
+        // 思路: 将a的值给b,将b的值给a
+        // 第二步：解决333这个值没有了的问题 在第一步的时候值没有，在第一步之前，将333这个值记录下来
+        var c = b; // 此时c的值是333
+        // 第一步: 将a的值给b
+        b = a;   // 遇到问题一: a和b的值都是999 333这个值没有了
+        // 第三步: 将b的值给a 由于c的值和b的值相同
+        a = c;
+
+        // 效果 打印a的值是333 b的值是999
+        console.log(a); 
+        console.log(b);
+        */
+
+        // 方式二
+        // 仅适用于数字(number)类型
+        var sum = a + b;
+        a = sum - a;
+        b = sum - b;
+
+        
+
+    </script>
+</body>
+</html>

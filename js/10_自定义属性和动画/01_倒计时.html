@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .all {
+            width: 600px;
+            margin: 200px auto;
+            text-align: center;
+            border: 3px solid grey;
+            padding-bottom: 50px;
+        }
+
+        .bigBox {
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .bigBox div {
+            width: 100px;
+            font-size: 20px;
+            line-height: 70px;
+            font-weight: bolder;
+            background-color: rgb(197, 34, 97);
+            color: white;
+            margin-left: 40px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <h1>元宵节距离当前时间还有:</h1>
+        <div class="bigBox">
+            <div id="box1">1</div>
+            <div id="box2">2</div>
+            <div id="box3">3</div>
+            <div id="box4">4</div>
+        </div>
+    </div>
+</body>
+<script>
+    var oBox1 = document.getElementById("box1");
+    var oBox2 = document.getElementById("box2");
+    var oBox3 = document.getElementById("box3");
+    var oBox4 = document.getElementById("box4");
+    setInterval(function () {
+        // 当前时间
+        var nowDate = new Date();
+        // 元宵节时间
+        var theDate = new Date('2022-02-15 00:00:00');
+        // 两个时间之间的毫秒数
+        var times = theDate.getTime() - nowDate.getTime();
+        // 转换成秒数
+        times = parseInt(times / 1000);
+
+        // 天数
+
+        // 一天:24小时 1h:60min 1min:60s
+        // 一天的秒数: 24 * 60 * 60
+        var day = parseInt(times / (24 * 60 * 60));
+        oBox1.innerHTML = day + '天';
+
+        // 剩余的秒数
+        times = times % (24 * 60 * 60)
+
+        // 小时
+        var hour = parseInt(times / (60 * 60));
+        oBox2.innerHTML = hour + '时'
+        // 剩余的秒数
+        times = times % (60 * 60);
+
+        var min = parseInt(times / 60);
+        oBox3.innerHTML = min + '分';
+
+        var sec = times % 60
+        oBox4.innerHTML = sec + '秒';
+
+
+    }, 1000)
+
+
+
+
+</script>
+
+</html>

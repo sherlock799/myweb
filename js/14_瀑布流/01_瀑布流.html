@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            position: relative;
+            height: 1500px;
+            border: 1px solid lightslategray;
+            margin: 0 auto;
+        }
+
+        .box {
+            position: absolute;
+            width: 200px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 3px solid lightgreen;
+            visibility: hidden;
+            transition: all 1s;
+
+        }
+
+        .box img {
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="box">
+            <img src="img/18.jpeg" alt="">
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <script>
+        var oWrap = document.getElementById('wrap');
+
+        createImg();
+        function createImg() {
+            for (var i = 1; i <= 20; i++) {
+                var theDiv = document.createElement("div");
+                theDiv.className = 'box'
+                oWrap.appendChild(theDiv);
+                var theImg = document.createElement('img');
+                theImg.src = 'img/' + i + '.jpeg';
+                theDiv.appendChild(theImg)
+            }
+        }
+        // 图片加载完成时,才能获取到对应标签的大小
+
+        // 页面中所有的资源加载完毕后响应
+
+        // 图片加载完成
+        window.onload = function () {
+            createFall();
+        }
+        // 浏览器大小发生变化时响应
+        window.onresize = function () {
+            createFall()
+        }
+
+        function createFall() {
+            // 一共有多少列
+            var space = 10;
+            var windowW = document.documentElement.clientWidth; // 浏览器的宽度
+            var childW = oWrap.children[0].offsetWidth;  // 子元素的宽度
+
+            // windowW - space: oWrap的最右侧距离border的位置
+            // childW + space: 当成一块的宽度
+            // 2:oWrap的border
+            var cols = (windowW - space - 2) / (childW + space);
+            cols = parseInt(cols)
+
+            // 设置wrap的宽度
+            oWrap.style.width = (childW + space) * cols + space + "px";
+
+            // 如何记录每一列高度
+            // 初始化每一列的高度
+            var colsHArr = [];
+            // 有几列，数组中就应该有多少个元素
+            for (var i = 0; i < cols; i++) {
+                colsHArr.push(0)
+            }
+            // 寻找最短的列，给oWrap的子元素设定定位值
+            for (var i = 0; i < oWrap.children.length; i++) {
+                // 寻找最短的列
+                var minH = colsHArr[0];
+                var minIndex = 0;
+                for (var j = 0; j < colsHArr.length; j++) {
+                    if (colsHArr[j] < minH) {
+                        minH = colsHArr[j];
+                        minIndex = j;
+                    }
+                }
+
+                // 给oWrap的子元素设定定位值
+                oWrap.children[i].style.top = minH + space + "px";
+                oWrap.children[i].style.left = space + (childW + space) * minIndex + "px";
+                oWrap.children[i].style.visibility = 'visible';
+                // 更新最短列的高度
+                colsHArr[minIndex] = colsHArr[minIndex] + space + oWrap.children[i].offsetHeight;
+            }
+
+            // 找最高的列，设置oWrap的高度
+
+            var maxH = colsHArr[0];
+            for (var j = 0; j < colsHArr.length; j++) {
+                if (colsHArr[j] > maxH) {
+                    maxH = colsHArr[j];
+                }
+            }
+            oWrap.style.height = maxH + space +  'px';
+        }
+
+        // 第一个 10  colsHArr下标为0
+        // 10 + (200 + 10 ) * 0
+        // 第二个 10 + 200 + 10 colsHArr下标为1
+        // 10 + (200 + 10 ) * 1
+        // 第三个 10 + 200 + 10 + 200 + 10 colsHArr下标为2
+        // 10 + (200 + 10 ) * 2
+        // 第四个 10 + 200 + 10 + 200 + 10 + 200 + 10 colsHArr下标为3
+        // 10 + (200 + 10 ) * 3
+
+        // 每一个图片应该放的位置
+        // 10 + (200 + 10 ) * 最短列所在的下标
+    </script>
+</body>
+
+</html>

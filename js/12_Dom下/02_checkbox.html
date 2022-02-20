@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" checked id='theCheck'>
+    <button id="btn">按钮</button>
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oCheck = document.getElementById('theCheck');
+
+        // 获取状态
+        // true:选中状态 非选中状态: false
+        console.log(oCheck.checked);
+        
+        // 设置状态
+        oCheck.checked = false;
+
+        // 点击按钮 取反
+        oBtn.onclick = function () {
+            // if (oCheck.checked === true) {
+            //     oCheck.checked = false;
+            // } else {
+            //     oCheck.checked = true;
+            // }
+            oCheck.checked = !oCheck.checked;
+            
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

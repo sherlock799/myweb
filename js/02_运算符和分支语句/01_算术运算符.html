@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        var k = 10
+        var abc = ++k + --k + k + k++ + k;
+        // var a = ++k; // a: 11 k: 11
+        // var b = --k; // b: 10 K: 10
+        // var c = k;   // c: 10 k: 10
+        // var d = k++; // d: 10 k: 11
+        // var e = k;   // e: 11 k: 11
+        console.log(abc,k);
+
+        /**********************  +=  -= *= /= %= ******************************/
+
+        var count = 10;
+        // count = count + 5;
+        // 等同于
+
+        count += 5;
+        console.log("count的值是",count);
+
+    </script>
+</body>
+
+</html>

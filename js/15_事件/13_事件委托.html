@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        ul {
+            width: 300px;
+            border: 1px solid black;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        ul li {
+            background-color: lightblue;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="list">
+        <li>事件委托1</li>
+        <li>事件委托2</li>
+        <li>事件委托3</li>
+        <li>事件委托4</li>
+        <li>事件委托5</li>
+    </ul>
+    <script>
+
+        var oList = document.getElementById('list');
+        // 事件委托: 利用了事件冒泡和v.target,来将我们子元素要做的事件，委托为父元素的事件
+        oList.onclick = function (ev) {
+            ev = ev || window.event
+            // ev.target: 哪儿个dom元素触发的此次事件
+            // console.log(ev.target)
+            if (ev.target !== this) {
+                console.log(ev);
+                ev.target.style.backgroundColor = 'red';
+            }
+        }
+        
+        // var theLis = oList.getElementsByTagName('li');
+        // for (var i = 0; i < theLis.length; i++) {
+        //     theLis[i].onclick = function () {
+        //         this.style.backgroundColor = 'red'
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

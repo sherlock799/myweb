@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if (true) {
+            var a = 10;
+        }
+        console.log(a); // 10
+
+        for (var i = 0; i < 5; i++) {
+            var sum = 100;
+        }
+        console.log(sum);
+
+        // 变量: 全局变量 局部变量
+        // 全局变量: 定义后，在页面的任意位置可以使用
+        // 局部变量: 只能在部分区域可以使用
+        // 在ES5中，只有函数内定义的变量是 局部变量，只能在函数内使用
+        function abc() {
+            var m = 999;
+            console.log(m + 1);
+        }
+        abc()
+        console.log(m); // 报错  m is not defined
+
+
+    </script>
+</body>
+</html>

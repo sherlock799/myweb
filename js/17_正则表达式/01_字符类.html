@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = 'dfg4365,a1bdr6e5wa37cAtd2a1w6deq5w7ca,b79a3bdqw63';
+        var re1 = /[0-9]/g;   // 匹配0-9
+        var re2 = /[1-4]/g;   // 匹配1-4
+        var re3 = /[1-4][0-9]/g;  // 匹配两位
+        var re4 = /[a-z]/g;   // 匹配a-z
+        var re5 = /[A-Z]/g;   // 匹配A-Z
+        var re6 = /[1,3]/g;   // 匹配 1 或者逗号 或者3 
+        var re7 = /a[1,3]b/g; // 匹配 a1b a,b a3b
+        var re8 = /[2-6a-z]/g;
+        var re9 = /[^a]+/g;   // 匹配不是a的字符
+        var re10 = /[^0-9a-z]/g; 
+        var re11 = /[123 456]/g; // 匹配1或者2或者3或者空格或者4或者5或者6
+        console.log(str.match(re10)); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 定义数组
+        // 数组中可以存放任意类型的值
+        var arr = ['奔驰', "smart", '甲壳虫', 'mini', 'BYD F0', 2.0, true];
+
+        // 数组中的每个元素都有一个对应的下标, 下标从0开始, 有序的
+
+        // 2. 类型
+        console.log(typeof arr); // object
+
+        // 如何判断一个变量 是数组？ 面试题
+        console.log(Array.isArray(arr));
+        
+        // 3. 取值
+        var a = arr[3]; // mini
+        console.log(a);
+
+        // 4. 赋值 更改数组中某个元素的值
+        arr[1] = '五菱宏光mini';
+        console.log(arr);
+
+        // 5. 获取数组的长度 数组的长度只能获取，不能赋值
+        var l = arr.length;
+        console.log(l);
+
+        // 6. 数组最后一个元素的下标: 数组长度 - 1
+
+        var last = arr[arr.length - 1];
+        console.log(last);
+
+        // 7. 打印数组中的每一个元素 遍历数组
+        for (var i = 0; i < arr.length; i++ ) {
+            console.log(arr[i]);
+        }
+    </script>
+</body>
+
+</html>

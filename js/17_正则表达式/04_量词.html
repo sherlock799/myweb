@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         *  + 至少一个没有上限
+         *  {n} 正好n个
+         *  {n,m} 最少n个 最多不限
+         *  {n, } 最少n个 最多不限
+         *  星号 * : 相当于{0,}  如果想要匹配星号 需要转义 \*
+         *  问号 ? : 相当于{0,1} 如果想要匹配问号 需要转义 \?
+        */
+        var str = 'rgahja333333i234567a333333338921hibwa3a3a33a333 bdgta3e4212t9guebde';
+
+        var re1 = /a3+/g;
+        var re2 = /(a3)+/g;
+        var re3 = /a3{2}/g;
+        var re4 = /a3{1,3}/g;
+        var re5 = /a3{2,}/g;
+        var re6 = /a3*/g;
+        var re7 = /a3?/g;
+
+
+        console.log(str.match(re7));
+
+    </script>
+</body>
+</html>

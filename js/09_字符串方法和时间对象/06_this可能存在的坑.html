@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var oBox = document.getElementById('box');
+        oBox.style.backgroundColor = getRandomColor()
+        oBox.onclick = function () {
+            console.log('onclick',this); // oBox
+            var _this = this; // _this是一个普通变量
+            setInterval(function () {
+                console.log('setInterval',this);// window
+                _this.style.backgroundColor = getRandomColor()
+            },1000)
+
+        }
+
+        function getRandomColor() {
+            var r = getRandomNum(0, 255);
+            var g = getRandomNum(0, 255);
+            var b = getRandomNum(0, 255);
+            // rgb(10,20,30)
+            return 'rgb(' + r + ',' + g + ',' + b + ')';
+            // return 'rgb(' + r + ',' + g + ',' + b + ')';
+
+        }
+        function getRandomNum(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
+    </script>
+</body>
+
+</html>

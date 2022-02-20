@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            border: 10px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- http://127.0.0.1:5500/01_JavaScript/06_数组/img/1.jpg -->
+    <img src="img/1.jpg" id="dog" alt="">
+    <script>
+        /*
+        var oDog = document.getElementById("dog");
+        // state 帮我们记录当前显示的是哪儿张图片
+        var state = "第一张图"; // 第一张图: 代表"img/1.jpg"
+        oDog.onclick = function () {
+            
+            if ( state ===  "第一张图" ) {
+                oDog.src = "img/八哥犬.jpg"
+                state = "第二张图";
+            } else {
+                oDog.src = "img/1.jpg"
+                state = "第一张图";
+            }
+        } */
+        /*var oDog = document.getElementById("dog");
+        var state = true; // true: 代表"img/1.jpg" false:img/1.jpg
+        oDog.onclick = function () {
+            if( state ) {
+            // if ( state === true ) {
+                oDog.src = "img/八哥犬.jpg";
+                // state = false;
+                // state = !state;
+            } else {
+                oDog.src = "img/1.jpg";
+                // state = true;
+                // state = !state;
+            }
+            state = !state;
+        }*/
+
+        // 使用布尔值帮我们记录状态
+        // 如果有多种状态，可以使用 0 1 2 3
+        var oDog = document.getElementById("dog");
+        console.log(oDog.src)
+        var state = true; // true: 代表"img/1.jpg" false:img/1.jpg
+        oDog.onclick = function () {
+            if( state ) {
+                oDog.src = "img/八哥犬.jpg";
+            } else {
+                oDog.src = "img/1.jpg";
+            }
+            state = !state;
+        }
+
+        /*oDog.onclick = function () {
+            console.log(oDog.src === 'img/1.jpg');
+            console.log(oDog.src);
+            //  oDog.src 底层会处理，将其变成绝对路径
+            if (oDog.src === 'img/1.jpg') {
+                alert(1);
+                oDog.src = "img/八哥犬.jpg"
+            } else {
+                oDog.src = "img/1.jpg"
+            }
+        }*/
+    </script>
+</body>
+
+</html>

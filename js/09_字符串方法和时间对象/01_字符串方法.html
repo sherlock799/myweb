@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        var str1 = '改革春风吹满地';
+        var str2 = 'Hello World';
+
+        // 1. 字符串长度 (空格 数字 标点 英文都算字符)
+        // 使用场景 判断字符串是否为空 验证字符串长度
+        console.log(str1.length);
+        console.log(str2.length);
+        
+        // 2. charAt: 获取某个下标对应的字符 下标也是从0开始
+        console.log(str1.charAt(2));
+
+        // 3. 遍历字符串
+        for (var i = 0; i < str1.length; i++) {
+            // console.log(str1.charAt(i));
+            console.log(str1[i]);
+        }
+
+        // 4. indexOf 更多判断字符串是否存在某个字或者子串
+        console.log(str1.indexOf('改')); // 0
+        console.log(str1.indexOf('春风')); // 2
+        console.log(str1.indexOf('哈哈')); // -1
+
+        // 5. 字符串截取 substring
+        // substring(2): 从下标为2开始截取,截取到最后(包含下标2)
+        var str3 = str1.substring(2); // 春风吹满地
+        // substring(2,4): 从下标为2开始截取,截取到下标4(包含下标2，不包含下标4)
+        var str4 = str1.substring(2,4); // 春风
+        
+
+        // 6. 字符串截取 substr
+        // substr(2,3) 从下标为2开始截取，截取3个
+        var str5 = str1.substr(2,3); // 春风吹
+        console.log(str5);
+
+        // 7. 字符串切割 split
+        var str6 = 'Play hard Study hard';
+        var strArr = str6.split(' ');
+        var strArr1 = str6.split('hard');
+        console.log(strArr1);
+
+        // 8. 大小写转换 toUpperCase
+        var str7 = 'long time no see';
+        var str8 = str7.toUpperCase(); // 转换成大写字母
+        console.log(str8);
+        var str9 = str8.toLowerCase(); // 转化成小写字母
+        console.log(str9);
+
+        // 9. 清除首尾空格 trim
+        var m = '    啊哈哈哈哈    ';
+        var str10 = m.trim();
+        console.log(m + '!');
+        console.log(str10 + '!');
+        
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = 'afdg6666fgddgf3465dg7346dg57673dgkkhaudgabvjfa812123';
+
+        /**
+         * 1. search
+         * 在字符串中查找第一个出现的下标, 如果不存在打印-1
+         * */ 
+        var index = str.search(/6/);
+        console.log(index);
+
+        // 2. match 
+        // 将符合条件的子串放到数组中并返回，
+        console.log(str.match(/dg/g));
+        console.log(str.match(/\d+/g));
+
+        // 3. replace
+        // bffffbfffbffffb
+        var str1 = 'aaaaaffffaaaaaaafffaffffaa';
+        var re1 = /a/g;
+        var str2 = str1.replace(re1,'b')
+        console.log(str2);
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

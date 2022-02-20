@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #all {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            cursor: pointer;
+            /* margin: 100px auto; */
+            margin: 1000px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <!-- <p>123</p> -->
+    </div>
+    <script>
+        var oAll = document.getElementById('all');
+
+        oAll.onclick = function (ev) {
+            // 兼容ie
+            ev = ev || window.event;
+            // 鼠标距离浏览器窗口的位置
+            console.log('clientX:',ev.clientX);
+            console.log('clientY:',ev.clientY);
+            // 鼠标距离页面的位置
+            console.log('pageX:',ev.pageX);
+            console.log('pageY:',ev.pageY);
+
+
+        }
+
+    </script>
+</body>
+</html>

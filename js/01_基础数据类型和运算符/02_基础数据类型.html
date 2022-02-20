@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // script中才能写js代码
+
+        // 1. 注释
+        // 单行注释：//
+        // 多行注释：/* 一堆代码 好多行 */
+
+        // 2. 定义变量
+        /**
+         * var : 类名修饰符(语法)
+         * a  : 变量(要求命名符合命名规范)
+         * =  : 赋值运算符
+         * 10 : 初始值
+        */
+        var a = 10;
+        
+        // 3. 命名规范
+        /**
+         * 1. 以数字 字母 下划线 $组成，不能以数字开头
+         * 2. 不能使用系统关键字 比如 var if else switch
+         * 3. 见名知意 (项目中，代表数量:count)
+         * 4. 使用驼峰结构或者下划线 比如: personName person_name
+        */
+
+        // 4. 输出语句 
+        /**
+         * 不能帮我们实现功能，一般在项目上线，会把所有的输出语法删除
+         * 帮我们调试代码，分析代码
+         * */
+        // console.log(a + 1);
+        // alert(1);
+
+        // 5. 基础数据类型
+        // 5.1 number
+
+        var a1 = 123;
+        console.log( typeof(a1) ); // number
+
+        var a2 = 3.14; // 浮点数
+        console.log( typeof(a2) ); // number
+        // !!! js中没有浮点类型 不管整数还是小数,都是数字类型
+
+        // 5.2 字符串 string
+
+        var b1 = "Hello World!!";
+        console.log( typeof(b1) ); // string
+        b1 = 123; // 给变量重新赋值，不需要再次写var
+        console.log( typeof(b1) ); // number
+
+        // 注意只要是有双引号，就是字符串类名
+        var b2 = "10"; // 字符串类型
+        console.log( typeof(b2) ); // string
+
+        // 注意b2和 "b2"
+        console.log(b2); // 打印变量b2代表的值
+        console.log("b2"); // 打印字符串b2
+
+        // 字符串拼接
+        var str1 = "马上过年了";
+        var str2 = '大家能回家过年么？回家隔离不？';
+
+        var str3 = str1 + str2;
+        console.log(str3);
+
+        // 问题: 中间加一个逗号 
+        // 先取变量的值->运算->将运算结果赋值给等号前面的变量
+        var str4 = ",";
+        str3 = str1 + str4 + str2; 
+        // "马上过年了" + "," + '大家能回家过年么？回家隔离不？'
+        // "马上过年了,大家能回家过年么？回家隔离不？" 
+        console.log(str3);
+
+        // 3. 布尔值 boolean 只有两个值
+        var flag1 = true;
+        var flag2 = false;
+
+        console.log( typeof(flag1) );
+
+        // 做逻辑判断时使用
+        var flag3 = 3 > 5;
+        console.log(flag3);
+
+        // 4. undefined 未定义
+        var abc;
+        console.log(abc); // undefined
+
+        // 5. null 空 一般用于给对象类型赋初始值
+        
+    </script>
+</body>
+
+</html>

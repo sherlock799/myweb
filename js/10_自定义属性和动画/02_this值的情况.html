@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        // 1. 独立调用函数 函数中的this是window
+        /*function abc() {
+            console.log('aaa');
+            console.log(this); // window
+        }
+        // abc();
+        // 底层 window.abc()
+        window.abc()*/
+
+        // 2. 匿名函数
+        /*var bbb = function () {
+            console.log(this);
+        }
+        bbb()*/
+        
+        // 第一种和第二种，原理相同,底层都是window.函数(),所以里面的this是window
+        
+        // 3. 事件中的this
+        /* var oBox = document.getElementById("box");
+        oBox.onclick = function () {
+            console.log(this); //oBox
+        } */
+
+        // 4. 事件中存在调用函数的情况
+        function abc() {
+            console.log('abc',this); // window
+        }
+        var oBox = document.getElementById("box");
+        oBox.onclick = function () {
+            abc()
+            console.log('oBox',this); //oBox
+        } 
+
+        // 未来学习面向对象，this的值还有其他情况
+        // var obj = new Object();
+        // obj.add = function () {
+        //     console.log(this);
+        // }
+        // obj.add();
+
+
+
+    
+    </script>
+</body>
+</html>

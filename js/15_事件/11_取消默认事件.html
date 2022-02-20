@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com" id="link">百度一下</a>
+    <script>
+        var oLink = document.getElementById('link');
+        oLink.onclick = function (ev) {
+            ev = ev || window.event;
+            ev.preventDefault(); // 不兼容IE低版本
+            
+            return false
+        }
+        // 右键菜单事件
+        document.oncontextmenu = function () {
+            return false;
+        }
+        // 禁止选中文字
+        document.onselectstart = function () {
+            return false;
+        }
+    </script>
+</body>
+</html>

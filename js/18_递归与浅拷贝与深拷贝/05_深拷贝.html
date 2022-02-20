@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 第一种  对象中没有方法
+        /*var obj = {
+            name: '马六',
+            age: 18,
+            a: {
+                sex: '女'
+            }
+        }
+        // var str = JSON.stringify(obj); // obj转化成json字符串
+        // var m = JSON.parse(str); // json字符串转化成json(新的对象) 
+        // 上两行代码可以简化成 如下形式
+        var m = JSON.parse(JSON.stringify(obj));
+        m.name = '张三';
+        m.a.sex = 'women';
+
+        console.log(m);
+        console.log(obj);*/
+
+
+        var obj = {
+            name: '马六',
+            age: 18,
+            a: {
+                sex: '女'
+            },
+            abc: function () {
+
+            }
+        }
+        var m = {}
+        deepCopy(m, obj)
+        m.a.sex = 'women';
+        console.log(m)
+        console.log(obj);;
+        function deepCopy(newObj, oldObj) {
+            for (const key in oldObj) {
+                var item = oldObj[key]
+                if (item instanceof Array) {
+                    newObj[key] = []
+                    deepCopy(newObj[key],item)
+                } else if (item instanceof Object) {
+                    newObj[key] = {}
+                    deepCopy(newObj[key],item)
+                } else {
+                    newObj[key] = item
+                }
+                
+            }
+        }
+        
+
+
+
+
+
+    </script>
+</body>
+
+</html>

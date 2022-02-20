@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div class="wrap"></div>
+    <div></div>
+    <div id="box"> <div class="wrap">1111</div> </div>
+    <div></div>
+    <div class="wrap"></div>
+    <div></div>
+    <div></div>
+    <div class="wrap"></div>
+    <span class="wrap"></span>
+    <script>
+        // 1. getElementsByTagName
+        // getElementsByTagName(标签名) 通过标签去获取元素
+        // document.getElementsByTagName('div') 获取页面中所有的div
+        var oDivs = document.getElementsByTagName('div');
+        var oSpans = document.getElementsByTagName('span');
+
+        var oBox = document.getElementById('box');
+        // oBox.getElementsByTagName('div') oBox标签下所有的div
+        var oChild = oBox.getElementsByTagName('div')
+
+        // 2. getElementsByClassName('wrap'); 通过类名去获取元素
+        var oWraps = document.getElementsByClassName('wrap');
+        var oChild1 = oBox.getElementsByClassName('wrap');
+        
+        console.log(oChild1);
+
+        // 注意:
+        //getElementsByClassName getElementsByTagName 获取的是数组类型,不能直接进行dom操作
+        // 需要通过下标获取对应的dom元素进行dom操作
+        oChild1[0].style.color = 'red';
+
+    </script>
+</body>
+</html>

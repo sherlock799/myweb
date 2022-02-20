@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .all {
+            width: 500px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div id="box"></div>
+    </div>
+    <script>
+        var oBox = document.getElementById('box');
+        // 每次向右运动一像素
+        var timer = setInterval(function () {
+            if (oBox.offsetLeft === 400) {
+                clearInterval(timer);
+            } else {
+                oBox.style.left = oBox.offsetLeft + 1 + 'px';
+            }
+        }, 20);
+        // console.log(oBox.offsetLeft);
+
+
+
+    </script>
+
+</body>
+
+</html>

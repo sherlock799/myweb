@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /**************************** + - * / %  ********************************/
+
+        var a = 3;
+        var b = 10;
+
+        console.log(a + b); // 加
+        console.log(a - b); // 减
+        console.log(a * b); // 乘
+        console.log(a / b); // 除
+
+        console.log(b % a); // 取余: 10除以3 整除后剩余的数 
+
+        /**************************** ++ -- 自增 自减  ********************************/
+
+        var c = 2;
+        c++; // 自身加一
+        c++;
+        console.log(c); 
+
+        var x = 10;
+        var y = x++; // 先返回再自加
+        console.log(x); // 11
+        console.log(y); // 10
+
+        var m = 18;
+        var n = ++m;// 先自加再返回
+        console.log(m); // 19
+        console.log(n); // 19
+
+        var k = 2;
+        var abc = ++k + --k + k + k++ + k;
+        console.log(abc);
+    </script>
+</body>
+
+</html>

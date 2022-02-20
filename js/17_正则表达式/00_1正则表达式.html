@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 正则表达式 又称规则表达式
+         * 正则表达式，通常用来检索,匹配,替换某些符合规则的文本
+         * 强大的字符串匹配工具
+        */
+        var str = 'Hi girl!!';
+        // 1. 定义
+        var re1 = /H/;
+        // test() : 正则的方法,判断字符中是否有符合正则的子串，返回布尔值
+        var flag1 = re1.test(str);
+        console.log(flag1); // true
+
+        // 2. 类型 对象
+        console.log(typeof re1); // object
+
+        // 3. 忽略大小写
+        var reg2 = /h/; 
+        var flag2 = reg2.test(str);
+        console.log(flag2); // false str中没有小写字母h
+
+        // i: 忽略大小写
+        var reg3 = /h/i;
+        var flag3 = reg3.test(str);
+        console.log(flag3); // false str中没有小写字母h
+
+
+
+
+    </script>
+</body>
+</html>

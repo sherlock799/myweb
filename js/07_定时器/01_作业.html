@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * 作业:
+            1. 课堂代码敲三遍
+            2. 求数组中元素累加的和
+            3. 随机10个 66 到 99之间的数，放到数组里
+            4. 随机出 66 ~ 99 之间的10个偶数，放到数组里
+            5. 思考题： 数组去重
+        */
+        // 2. 求数组中元素累加的和
+        /*
+        var arr = [1,2,3,4,5,6,7,8,9,10];
+        var sum = 0;
+        for ( var i = 0; i < arr.length; i++ ) {
+            sum = sum + i;
+            console.log(i);
+        }*/
+
+        // 3. 随机10个 66 到 99 之间的数，放到数组里
+        /*var arr = [];
+        for (var i = 0; i < 10; i++) {
+            var num = Math.floor(Math.random() * (99 - 66 + 1) + 66);
+            arr.push(num);
+        }*/
+
+        // 4.  随机出 66 ~ 99 之间的10个偶数，放到数组里
+
+        // 不知会循环多少次，才能随机出10个偶数
+        var arr = [];
+        while (arr.length !== 10) {
+            var num = Math.floor(Math.random() * (99 - 66 + 1) + 66);
+            if (num % 2 == 0) {
+                arr.push(num);
+            }
+        }
+        console.log(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

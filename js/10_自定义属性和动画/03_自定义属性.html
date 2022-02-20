@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1" index="1" style="color: yellow;"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <script>
+        // class id style src href 成为标签的属性,属于js底层定义好的属性
+
+        // 属性: 代表的功能和含义相同, 不同标签对应相同的属性，值可以相同，也可以不同
+
+        /**
+         * 自定义属性： 自己定义属性 自己定义对应的功能
+         * 属性的名字可以自己取,不能和系统关键字和标签本身属性重复
+         * 应用场景：
+         *  1. 当标签属性不够用时
+         *  2. 多个标签希望有一个相同特性的属性代表某个功能的值
+        */
+        var oBox1 = document.getElementById('box1');
+        var oBox2 = document.getElementById('box2');
+
+        console.log(oBox1.getAttribute('index')); // undefined
+        oBox2.index = 2;
+        console.log(oBox2.index); // 2
+
+
+    </script>
+</body>
+</html>

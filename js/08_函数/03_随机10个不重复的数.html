@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 3. 思考题：随机66 到 99 之间，10个不重复的数，放到数组中
+        var arr = [];
+        while (arr.length !== 10) {
+            // 判断随机的一个数，是否可以放到数组中
+            var num = Math.floor(Math.random() * (99 - 66 + 1) + 66);
+            var flag = arr.indexOf(num) === -1; // 判断num是否在数组中存在
+            if (flag) {
+                arr.push(num);
+            }
+        }
+        console.log(arr);
+
+
+
+
+    </script>
+</body>
+
+</html>

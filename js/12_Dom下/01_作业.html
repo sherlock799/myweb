@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="theText"><button id="btn">add</button>
+    <ul id="list">
+        <li>1</li>
+    </ul>
+    <script>
+        var oList = document.getElementById('list');
+        var oTheText= document.getElementById('theText');
+        var oBtn = document.getElementById('btn');
+
+        oBtn.onclick = function () {
+            if (theText.value.trim().length === 0) {
+                alert('请输入内容')
+            } else {
+                var theLi = document.createElement('li');
+                theLi.innerHTML = theText.value.trim();
+                oList.appendChild(theLi)
+            }
+            // 清除输入框的内容
+            theText.value = ''
+        }
+
+
+    </script>
+</body>
+</html>

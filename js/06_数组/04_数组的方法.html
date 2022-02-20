@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = ['奔驰', "smart", '甲壳虫', 'mini', 'BYD F0', 'JEEP 自由侠', '雷克萨斯'];
+
+        // 1. push 向数组末尾添加一个或多个元素
+
+        arr.push('凯迪拉克');
+        arr.push('保时捷', '特斯拉');
+
+        // 2. unshift 向数组头部添加一个或多个元素
+        arr.unshift('霸道');
+        console.log(arr);
+
+        // 3. pop 从数组末尾删除并返回删除的元素
+
+        var el = arr.pop();
+        console.log(arr);
+        console.log(el);
+
+        // 4. shift 删除并返回数组中第一个元素
+
+        var el1 = arr.shift()
+        console.log(arr);
+        console.log(el1);
+
+        // 5. splice 从下标为2开始删,删除3个
+        arr.splice(2, 3);
+        console.log(arr);
+
+        // 删除具体某个下标对应的元素   **更常用**
+        arr.splice(4, 1);
+
+        // 6. indexOf 获取元素在数组中的下标 如果不存在，打印-1
+        // 在项目中，更多的是判断某个元素在数组中是否存在
+
+
+        var arr1 = ['奔驰', "smart", '甲壳虫', 'mini', 'BYD F0', 'JEEP 自由侠', '雷克萨斯'];
+
+        var a = arr1.indexOf('奥迪Q5'); // -1 
+        var b = arr1.indexOf('甲壳虫'); // 2
+
+        // 判断甲壳虫是否在数组中存在
+        if ( arr1.indexOf('甲壳虫') !== -1 ) {
+            console.log('存在');
+        } else {
+            console.log('不存在');
+        }
+        console.log(a,b);
+
+
+        // 7. concat 数组拼接
+        var arrA = [1,2,3];
+        var arrB = [4,5,6];
+        var arrC = [7,8,9];
+
+        var arrD = arrA.concat(arrB);
+        var arrF = arrA.concat(arrB,arrC);
+        console.log(arrD);
+        console.log(arrF);
+
+        // 拼接后不改变 arrA arrB arrC的值
+        
+        // 8. join 
+        var arrM = ['111','222','333'];
+        var str1 = arrM.join('~');
+        var str2 = arrM.join(); // 以逗号拼接
+        var str3 = arrM.join("");
+        console.log(str3);
+
+        // 9. 在数组的任意位置添加元素
+        var arrX = [3,5,6,7,8];
+
+        // 在删除的位置添加多个元素
+        // arrX.splice(1,0,999,666);
+        arrX.splice(1,2,999,666);
+
+        console.log(arrX);
+
+
+        
+
+        var arr = [1,2,3,3,4,6,9,0,4,5]
+
+
+
+
+      
+    </script>
+</body>
+
+</html>
