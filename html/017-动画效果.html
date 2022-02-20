@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 50px;
+            background-color: yellow;
+            border: 1px solid gray;
+            transition: all 2s;
+        }
+        .box2{
+            width: 200px;
+            height: 50px;
+            background-color: yellow;
+            border: 1px solid gray;
+            transition: all 2s linear ;
+            /* 动画不支持display变化 */
+        }
+        .box2 ul{
+            height: 0px;
+            margin-top: 50px;
+            overflow: hidden;
+            transition: all 3s;
+        }
+        .box2:hover ul{
+            height: 200px;
+            display: block;
+        }
+        .box1:hover{
+            transform: translate(100px,100px) scale(2,2);
+            /* 
+            平移: translate
+            缩放: scale
+            旋转: rotate
+            倾斜: skew
+            */
+            /* 旋转,缩放会影响位移的效果
+               尽量把位移放在前面      */
+        }
+    </style>
+</head>
+<body>
+    <div class="box2">
+        我的菜单
+        <ul>
+            <li>3123</li>
+            <li>3123</li>
+            <li>3123</li>
+            <li>3123</li>
+        </ul>
+    </div>
+    <div class="box1"></div>
+</body>
+</html>

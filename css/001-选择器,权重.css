@@ -1,0 +1,81 @@
+/* !important > 行内 > id > class > 后代选择器 > 标签 */
+/* 相同权重采用就近原则 */
+    h1{
+        color: red!important;
+    }
+/* 标签选择器 */
+    h2{
+        color: green;
+    }
+/* class选择器 */
+    .h3{
+        color: rgb(36, 47, 206);
+    }
+/* id选择器 */
+    #Welcome4{
+        color: orange;
+    }
+/* 通配符选择器 */
+    *{
+        /* 内边距 */
+        padding: 0;
+        /* 外边距 */
+        margin: 0;
+    }
+/* 群组选择器 */
+    h4,h5{
+        background-color: plum;
+    }
+/* 后代选择器 */
+    div p{
+        background-color: rgb(43, 158, 78);
+    }
+/* 子代选择器 */
+div>p{
+    background-color: rgb(43, 158, 78);
+}
+/* 兄弟选择器 */
+div~p{
+    background-color: rgb(43, 158, 78);
+}
+/* 属性选择器 */
+div[属性]{
+    background-color: rgb(43, 158, 78);
+}
+/* 
+    模糊匹配:
+        包含~= 开头^= 结尾$= 字符*= 
+*/
+/* 伪类选择器(<a>标签) */
+    a:link{
+        /* 未访问 */
+        color: red;
+    }
+    a:hover{
+        /* 悬停 */
+        background-color: rgb(197, 138, 83);
+    }
+    a:visited{
+        /* 已访问 */
+        color: white;
+    }
+    a:active{
+        /* 激活 */
+        color: black;
+    }
+    /* 
+    :root
+    :last-child
+    :first-child
+    :only-child
+    :nth-child(even)
+    :empty
+    :target
+    :enabled
+    :disabled
+    :selection
+    :focus
+    :checked
+    :not(s)
+    */
+

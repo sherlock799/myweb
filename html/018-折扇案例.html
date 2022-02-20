@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('animate.css');
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            margin: 10px auto;
+            width: 600px;
+            height: 400px;
+            border: 5px solid grey;
+            position: relative;
+        }
+        .box div{
+            width: 40px;
+            height: 160px;
+            border-radius: 4px;
+            position: absolute;
+            left: 50%;
+            bottom:30px;
+            margin-left: -20px;
+            text-align: center;
+            transform-origin: bottom center;
+            transition: all 2s;
+        }
+        .box div:not(:nth-child(7)){
+            opacity: 0;
+        }
+        .box:hover div{
+            opacity: 1;
+        }
+        .box div:nth-child(1),.box div:nth-child(13){
+            background-color: purple;
+        }
+        .box div:nth-child(2),.box div:nth-child(12){
+            background-color: rgb(139, 72, 201);
+        }
+        .box div:nth-child(3),.box div:nth-child(11){
+            background-color: blue;
+        }
+        .box div:nth-child(4),.box div:nth-child(10){
+            background-color: green;
+        }
+        .box div:nth-child(5),.box div:nth-child(9){
+            background-color: yellow;
+        }
+        .box div:nth-child(6),.box div:nth-child(8){
+            background-color: orange;
+        }
+        .box div:nth-child(7){
+            background-color: red;
+        }
+        .box:hover div:nth-child(1){
+            transform: rotate(90deg);
+        }
+        .box:hover div:nth-child(13){
+            transform: rotate(-90deg);
+        }
+        .box:hover div:nth-child(2){
+            transform: rotate(75deg);
+        }
+        .box:hover div:nth-child(12){
+            transform: rotate(-75deg);
+        }
+        .box:hover div:nth-child(3){
+            transform: rotate(60deg);
+        }
+        .box:hover div:nth-child(11){
+            transform: rotate(-60deg);
+        }
+        .box:hover div:nth-child(4){
+            transform: rotate(45deg);
+        }
+        .box:hover div:nth-child(10){
+            transform: rotate(-45deg);
+        }
+        .box:hover div:nth-child(5){
+            transform: rotate(30deg);
+        }
+        .box:hover div:nth-child(9){
+            transform: rotate(-30deg);
+        }
+        .box:hover div:nth-child(6){
+            transform: rotate(15deg);
+        }
+        .box:hover div:nth-child(8){
+            transform: rotate(-15deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+    </div>
+</body>
+</html>

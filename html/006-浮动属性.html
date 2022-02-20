@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        .red { 
+            background:red;
+            float: right;
+        }
+        .green { 
+            float: left;
+            background:green;
+        }
+        .blue {
+            float: left;
+            background:blue;
+        }
+        .orange {
+            height: 110px;
+            background:orange;
+            clear: both;
+        }
+        .container{
+            overflow: hidden;
+            /* bfc */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="red"></div>
+        <div class="green">大家好</div>
+        <!-- 文字不会被挡住(定位会挡住) -->
+        <div class="blue"></div>
+    </div>
+    <div class="orange"></div>
+</body>
+</html>

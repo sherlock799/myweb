@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 98px;
+        height: 48px;
+    }
+    div.static {
+        position: static;
+        border: 1px solid #73AD21;
+    }
+    div.absolute {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border: 1px solid #73AD21;
+        background-color: yellow;
+    }
+    div.relative {
+        position: relative;
+        left: 100px;
+        border: 1px solid #73AD21;
+        background-color: red;
+        z-index: -1;
+    }
+    div.fixed {
+        position: fixed;
+        left: 100px;
+        bottom: 0;
+        border: 1px solid #73AD21;
+    }
+    .sticky {
+        position: sticky;
+        top: 0;
+        border: 1px solid #73AD21;
+        background-color: red;
+    }
+</style>
+</head>
+<body>
+    <div class="static">
+        position: static;
+    </div>
+    <div class="absolute">
+        position: absolute;
+    </div>
+    <div class="relative">
+        position: relative;
+    </div>
+    <div class="fixed">
+        position: fixed;
+    </div>
+    <div class="sticky">
+        position: sticky;
+    </div>
+    <div style="padding-bottom:2000px">
+        <p>一些启用滚动的文本.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>一些启用滚动的文本.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      </div>
+</body>
+</html>

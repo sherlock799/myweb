@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            border: 10px solid gray;
+            background: linear-gradient(90deg, rgb(173, 209, 43),rgb(115, 224, 115));
+        }
+        .div2{
+            width: 100px;
+            height: 100px;
+            border: 10px solid gray;
+            border-radius: 50%;
+            background: repeating-radial-gradient(20% 20%, rgb(189, 214, 97),rgb(211, 17, 17))
+        }
+        .div3{
+            width: 200px;
+            height: 200px;
+            border: 2px solid gray;
+            background:linear-gradient( rgb(255, 255, 255) 50%,rgb(0, 0, 0) 50%);
+            display: flex;
+            align-items: center;
+            border-radius: 50%;
+            transition: all 20s linear ;
+            animation: rot 2s linear 1ms infinite ;
+        }
+        /* 
+        暂停: animation-play-state: paused
+        反向: animation-direction: reverse
+        结束状态: animation-fill-mode: fowawrds
+        */
+        @keyframes rot {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        /* .div3:hover{
+            transform: rotate(3600deg);
+        } */
+        .div3::before{
+            content:"";
+            width: 100px;
+            height: 100px;
+            display: block;
+            background:radial-gradient(white 25%,black 26%);
+            border-radius: 50%;
+        }    
+        .div3::after{
+            content:"";
+            width: 100px;
+            height: 100px;
+            display: block;
+            background:radial-gradient(rgb(0, 0, 0) 25%,rgb(255, 255, 255) 26%);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+</body>
+</html>

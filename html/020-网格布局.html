@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 600px;
+            border: 2px solid red;
+            display: grid;
+            grid-template-rows: 100px 100px 100px;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-areas:'q q s' 
+                                'a x s' 
+                                'z x c';
+            justify-content: center;                    
+            align-content: center;
+            /* place-content */
+            justify-items: center;
+            align-items: center;
+            /* place-items */
+        }
+        .box div{
+            width: 50px;
+            height: 50px;
+            border: 1px solid red;
+        }
+        .box div:nth-child(1){
+            grid-area: q;
+        }
+        .box div:nth-child(2){
+            grid-area: s;
+        }
+        .box div:nth-child(3){
+            grid-area: a;
+        }
+        .box div:nth-child(4){
+            grid-area: x;
+        }
+        .box div:nth-child(5){
+            grid-area: z;
+        }
+        .box div:nth-child(6){
+            grid-area: c;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+</html>

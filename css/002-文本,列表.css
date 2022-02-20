@@ -1,0 +1,58 @@
+.p1{
+    /* 文本属性组合  font:<样式> <字体大小>/<行间距> <字体类型>  */  
+    /* 字体大小 */  font-size: 20px;
+    /* 字体类型 */  font-family: 草书,宋体;
+    /* 文本颜色 */  color: rgb(15, 114, 114);
+    /* 文本位置 */  text-align: justify;
+    /*  行间距  */  line-height: 40px;
+    /* 字符间距 */  letter-spacing: 2px; 
+    /* 单词间距 */  word-spacing: 44px;
+    /* 首行缩进 */  text-indent: 2em;
+    /* 文本修饰 */  text-decoration: line-through;
+    /*  大小写  */  text-transform: uppercase;
+    /*  文本阴影  */  text-shadow: 1px 1px 10px violet ;
+    background-color:yellowgreen
+}
+
+.box1{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(248, 244, 246);
+    background-image: url(../img/Snipaste_2022-01-30_15-24-18.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 2px 2px 10px turquoise;
+    border-radius: 10px/30px;
+}
+.box2{
+    width: 40px;
+    height: 30px;
+    background-color: rgba(42, 204, 36, 0.9);
+    background-image: url(../img/Snipaste_2022-01-30_15-24-18.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.box3{
+    width: 40px;
+    height: 3000px;
+    background-color: rgba(42, 204, 36, 0.9);
+    background-image: url(../img/Snipaste_2022-01-30_15-24-18.png);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* 位置只相对浏览器,但图片只会在div中显示 */
+    
+    /* 复合写法 background 会覆盖其他的设置  
+       background-size只能单独使用  */
+}
+
+ul{
+    list-style: none inside url("../img/Snipaste_2022-01-30_15-21-44.png");
+}
+li{
+    border: 2px solid rgb(212, 95, 212);
+    list-style-position: inside;
+}
+

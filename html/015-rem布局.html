@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            font-size: 5vw;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .div1,.div2 {
+            border: 1px solid red;
+            
+        }
+        .div1 p {
+            font-size: 2rem;
+        }
+        .div2 p{
+            font-size: 1rem;
+            /* font-size: 2rem; rem: 相对于根元素(html) 
+             font-size: 2em;   em: 相对于父元素 */
+        }
+    </style>
+    <script>
+        document.documentElement.style.fontSize = 
+        document.documentElement.clientWidth/375 * 16 +'px'
+    </script>
+</head>
+
+<body>
+    <div class="div1">
+        <p>1232</p>
+    </div>
+    <div class="div2">
+        <p>1232</p>
+    </div>
+</body>
+
+</html>
