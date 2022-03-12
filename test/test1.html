@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" name="" id="">
+  <div style="border: 1px solid;width: 100px;height: 100px;"></div>
+  <script>
+    let tel = document.querySelector('input')
+    let eDiv = document.querySelector('div')
+    var i = 1
+    tel.addEventListener('input', debounse(demo,1000))
+    eDiv.addEventListener('click',throttle((e)=>{
+      console.log('fff',i++)},1000)
+    )
+
+    function debounse(fn, delay) {
+      let timer = null
+      return () => {
+        timer && clearTimeout(timer)
+        timer = setTimeout(fn, delay)
+      }
+    }
+    function throttle(fn,delay) {
+      let timer = null
+      return ()=>{
+        if(!timer){
+          timer = setTimeout(() => {
+          fn()
+          timer = null
+          }, delay)
+        }
+      }
+      
+    }
+
+    function demo() {
+      console.log('fff', i++)
+    }
+  </script>
+</body>
+
+</html>

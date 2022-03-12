@@ -106,6 +106,3 @@ huaweiMatebookPro.info();
 huaweiMatebookPro.boot();
 huaweiMatebookPro.info();
 huaweiMatebookPro.shutdown();
-
-
-微信昵称：Rennix09
