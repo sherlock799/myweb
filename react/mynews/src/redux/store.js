@@ -1,7 +1,7 @@
 import {createStore,combineReducers} from 'redux'
 import {CollapsedReducer} from './reducers/CollapsedReducer'
 import {LoadingReducer} from './reducers/LoadingReducer'
-import { persistStore, persistReducer } from 'redux-persist'
+import {persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
 const reducer = combineReducers({
